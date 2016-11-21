@@ -1,18 +1,29 @@
 package com.pokedex;
 
 public class Pokemon {
-    private final String id;
-    private final String izena;
-    
-    public Pokemon(String pId, String pIzena) {
-        this.id = pId;
-        this.izena = pIzena;
+
+    private int pokId;
+    private String pokIzena;
+
+    public Pokemon(int pPokId, String pPokIzena) {
+        this.pokId = pPokId;
+        this.pokIzena = pPokIzena;
     }
-    
-    public String getId() {
-        return id;
+
+    public int getPokId() {
+        return pokId;
     }
-    public String getIzena() {
-        return izena;
-    }  
+
+    public void setPokId(int pPokId) {
+        this.pokId = pPokId;
+    }
+
+    public String getPokIzena() {
+        return pokIzena;
+    }
+
+    public void setPokIzena(String pPokIzena) {
+        this.pokIzena = pPokIzena;
+    }
+
 }

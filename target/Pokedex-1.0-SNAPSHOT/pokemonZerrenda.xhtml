@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+        <h:body>
+            <h:form>
+                <p:outputLabel value="Pokemon:" />
+                <p:selectOneListbox style="width: 200px;" value="#{selectOneListBoxBean.selectedPokemon}" filter="true" filterMatchMode="contains" var="p">
+                    <f:selectItems value="#{selectOneListBoxBean.pokeList}" var="tutorial"
+                                   itemValue="#{pokemon}" itemLabel="##{tutorial.pokId} - #{tutorial.pokIzena}">
+                    </f:selectItems>
+                    <p:column>
+                        <p:graphicImage value="/irudiak/pokemon/#{p.pokId}.png" width="40"/>
+                    </p:column>
+                    <p:column>
+                        ##{p.pokId} - #{p.pokIzena}
+                    </p:column>
+                </p:selectOneListbox>
+            </h:form>          
+        </h:body>
+    </f:view>
+</html>
