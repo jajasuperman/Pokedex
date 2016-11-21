@@ -18,6 +18,7 @@
     <body>
         <h1>Hello Worldd!</h1>
         <a href="./pruebita.xhtml">pipo</a>
+        <a href="./pokemonZerrenda.xhtml">zerrenda</a>
     </body>
 </html>
 

@@ -13,21 +13,31 @@
                 <title>PrimeFaces</title>
             </f:facet>
         </h:head>
-        <h:body>
-            <h:form>
-                <p:outputLabel value="Pokemon:" />
-                <p:selectOneListbox style="width: 200px;" value="#{selectOneListBoxBean.selectedPokemon}" filter="true" filterMatchMode="contains" var="p">
-                    <f:selectItems value="#{selectOneListBoxBean.pokeList}" var="tutorial"
-                                   itemValue="#{pokemon}" itemLabel="##{tutorial.pokId} - #{tutorial.pokIzena}">
-                    </f:selectItems>
-                    <p:column>
-                        <p:graphicImage value="/irudiak/pokemon/#{p.pokId}.png" width="40"/>
-                    </p:column>
-                    <p:column>
-                        ##{p.pokId} - #{p.pokIzena}
-                    </p:column>
-                </p:selectOneListbox>
-            </h:form>          
+        <h:body style="background-color:#d3d3d3 ">
+            <br><div><center><p:outputLabel value="¿BULBASUR?" style="size: portrait" /></center></div></br>
+            <div>
+                <h:form>
+                    <p:outputLabel value="Pokemon:" />
+                    <p:selectOneListbox style="width: 200px;" value="#{selectOneListBoxBean.selectedPokemon}" filter="true" filterMatchMode="contains" var="p">
+                        <f:selectItems value="#{selectOneListBoxBean.pokeList}" var="tutorial"
+                                       itemValue="#{pokemon}" itemLabel="##{tutorial.pokId} - #{tutorial.pokIzena}">
+                        </f:selectItems>
+                        <p:column>
+                            <p:graphicImage value="/irudiak/pokemon/#{p.pokId}.png" width="40"/>
+                        </p:column>
+                        <p:column>
+                            ##{p.pokId} - #{p.pokIzena}
+                        </p:column>
+                    </p:selectOneListbox>
+                </h:form> 
+            </div>
+            <div style="position: absolute;top: 10%;left: 42%;">
+                <p:graphicImage value="/irudiak/pokemon/#{p.pokId}.png" width="200" height="200" style="border-style: inset; border-color: black;"/>
+            </div>
+            <div style="position: absolute; top: 50%; left: 20%;">
+                <textarea style="width: 400px;height: 200px;">Pasa del culo de Ash.</textarea>
+                <textarea style="width: 400px;height: 200px;">Tipo fuegote y voladorl.</textarea>
+            </div>
         </h:body>
     </f:view>
 </html>
