@@ -8,6 +8,19 @@
       xmlns:p="http://primefaces.org/ui">
     <f:view contentType="text/html">
         <h:head>
+            <script type="text/javascript">
+                function aldatu(zenb) {
+                    alert("0");
+                    var unekoa = document.getElementsByTagName("p:tabMenu");
+                    alert("1.2");
+                    //alert(unekoa.getAttributeNode("activeIndex").name);
+                    alert("1");
+                    if (unekoa === null) {
+                        alert("null");
+                    }
+                    unekoa.getAttributeNode("activeIndex").value = zenb;
+                }
+            </script>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>PrimeFaces</title>
@@ -31,32 +44,19 @@
                     </p:selectOneListbox>
                 </h:form> 
             </div>
-            
-            <div id="menua">
-                <h:form>
-                    <p:tabMenu activeIndex="#{param.i}">
-                        <p:menuitem value="ppoppo">
-                            <f:param name="i" value="0" />            
-                        </p:menuitem>
-                        <p:menuitem value="lalalala">
-                            <f:param name="i" value="1" />
-                        </p:menuitem>
-                </p:tabMenu>
-                </h:form>
-            </div>
+
+
+            <p:tabView>
+                <p:tab title="Ruka1">
+                    <h:outputText value="The story begins as Don Vito Corleone..." />
+                </p:tab>
+                 <p:tab title="Ruka2">
+                    <h:outputText value="The story begins as Don Vito Corleone3333..." />
+                </p:tab>
+            </p:tabView>
+
             <div style="position: absolute;top: 10%;left: 42%;">
                 <p:graphicImage value="/irudiak/pokemon/#{p.pokId}.png" width="200" height="200" style="border-style: inset; border-color: black;"/>
-            </div>
-            <div>
-                <h:form>
-                    <p:stack icon="/resources/demo/images/dock/stack.png" expanded="true">
-                        <p:menuitem value="Home"  url="#"/>
-                        <p:menuitem value="Music" url="#"/>
-                        <p:menuitem value="Video"  url="#"/>
-                        <p:menuitem value="Email"  url="#"/>
-                        <p:menuitem value="Portfolio" url="#"/>
-                    </p:stack>
-                </h:form>
             </div>
         </h:body>
     </f:view>
