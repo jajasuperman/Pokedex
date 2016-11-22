@@ -1,0 +1,10 @@
+<web-app>
+    <context-param>
+        <param-name>primefaces.PRIVATE_CAPTCHA_KEY</param-name>
+        <param-value>6LdksgwUAAAAAOSoWe4y9QEuBXoQoUF2kIkFwIN8</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.PUBLIC_CAPTCHA_KEY</param-name>
+        <param-value>6LdksgwUAAAAAHqsYsNXZogHK42vrCSEfFV_xM5x</param-value>
+    </context-param>
+</web-app>
