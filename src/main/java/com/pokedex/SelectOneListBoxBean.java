@@ -2,9 +2,11 @@ package com.pokedex;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 @SessionScoped
@@ -35,8 +37,17 @@ public class SelectOneListBoxBean {
         return selectedPokemon;
     }
 
-    public void setSelectedTuorial(String pSelectedPokemon) {
-        this.selectedPokemon = pSelectedPokemon;
+    public String getSelectedPokemonName() {        
+        return Integer.toString(Integer.parseInt(selectedPokemon));
+    }
+
+    public void setSelectedPokemon(String pSelectedPokemon) {
+        for (Pokemon aux : pokeList) {
+            if (aux.toString().equals(pSelectedPokemon)) {
+                this.selectedPokemon = String.valueOf(aux.getPokId());
+                break;
+            }
+        }
     }
 
     public String submitTraining() {

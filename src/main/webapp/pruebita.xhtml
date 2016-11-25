@@ -10,30 +10,38 @@ and open the template in the editor.
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-   <f:view contentType="text/html">
+    <f:view contentType="text/html">
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>PrimeFaces</title>
             </f:facet>
         </h:head>
-    <h:body>
-        <h:form>
-    <p:growl id="messages" showDetail="false"/>
-    <p:commandButton id="dynaButton" value="Show" type="button" icon="ui-icon-extlink"/>
-    <p:menu overlay="true" trigger="dynaButton" my="left top" at="left bottom">
-        <p:submenu label="Ajax">
-            <p:menuitem value="Save" actionListener="#{menuView.save}" update="messages" icon="ui-icon-disk"/>
-            <p:menuitem value="Update" actionListener="#{menuView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
-        </p:submenu>
-        <p:submenu label="Non-Ajax">
-            <p:menuitem value="Delete" actionListener="#{menuView.delete}" update="messages" ajax="false" icon="ui-icon-close"/>
-        </p:submenu>
-        <p:submenu label="Navigations">
-            <p:menuitem value="External" url="http://www.primefaces.org" icon="ui-icon-home"/>
-        </p:submenu>
-    </p:menu>
-        </h:form>
-    </h:body>
-   </f:view>
+        <h:body>
+            <h:panelGroup layout="block">
+                <h:selectOneListbox styleClass="article_combo" size="0" id="selectedMenu" >
+                    <f:selectItem itemLabel="first" itemValue="0" />
+                    <f:selectItem itemLabel="second" itemValue="1" />
+                    <f:selectItem itemLabel="third" itemValue="2" />
+
+                    <f:ajax event="change" execute="@this" render="loadMenu" />
+                </h:selectOneListbox>
+            </h:panelGroup>
+
+            <h:panelGroup layout="block" id="produktMenu">
+                <h:panelGroup rendered="#{produkt_KatBean.selectedMenu==1}">
+                    Menu 1
+                </h:panelGroup>
+                <h:panelGroup rendered="#{produkt_KatBean.selectedMenu==2}">
+                    Menu 2
+                </h:panelGroup>
+                <h:panelGroup rendered="#{produkt_KatBean.selectedMenu==3}">
+                    Menu 3
+                </h:panelGroup>     
+                <h:panelGroup rendered="#{produkt_KatBean.selectedMenu==4}">
+                    Manu 4
+                </h:panelGroup>
+            </h:panelGroup>
+        </h:body>
+    </f:view>
 </html>
