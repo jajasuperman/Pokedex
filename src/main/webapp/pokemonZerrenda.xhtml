@@ -25,25 +25,27 @@
                                            itemValue="#{pokemon}" itemLabel="##{pokemon.id} - #{pokemon.name}" />                                
                             <f:ajax render="pokeImage" />
                             <p:column>
-                                <p:graphicImage value="/irudiak/pokemon/#{p.pokId}.png" width="40"/>
+                                <p:graphicImage value="/irudiak/pokemon/#{p.id}.png" width="40"/>
                             </p:column>
                             <p:column>
-                                ##{p.pokId} - #{p.pokIzena}
+                                ##{p.id} - #{p.name}
                             </p:column>
                         </p:selectOneListbox>
 
                     </div>
+
                     <div class="ui-g-12 ui-md-10 ui-g-nopad" id="pokeInfo">
-                        <div class="ui-g-12 ui-g-nopad">
-                            <div>
-                                <center>
-                                    <p:outputLabel id="text" value="#{basicView.text}" style="size: portrait" />
-                                </center>
-                            </div>
+                        <h:panelGroup id="pokeImage">
+                            <div class="ui-g-12 ui-g-nopad">
+                                <div>
+                                    <center>
+                                        <p:outputLabel id="text" value="#{selectOneListBoxBean.selectedPokemonName}" style="size: portrait" />
+                                    </center>
+                                </div>
 
-                            <br />
+                                <br />
 
-                            <h:panelGroup id="pokeImage">
+
                                 <div style="text-align: center;top: 10%;left: 42%;">
                                     <p:graphicImage value="/irudiak/pokemon/#{selectOneListBoxBean.selectedPokemon}.png" width="200" height="200" style="border-style: inset; border-color: black;" cache="false" />
                                 </div>
@@ -56,10 +58,11 @@
                                         </p:tab>
                                     </p:tabView>
                                 </div>
-                            </h:panelGroup>
-                        </div>
-                    </div>                
-                </div> 
+
+                            </div>
+                        </h:panelGroup>
+                    </div>
+                </div>
             </h:form>
         </h:body>
     </f:view>

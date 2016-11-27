@@ -39,7 +39,8 @@ public class SelectOneListBoxBean {
         if(selectedPokemon == null) {
             return "";
         }
-        return Integer.toString(Integer.parseInt(selectedPokemon));
+        int select = Integer.parseInt(selectedPokemon) - 1;
+        return pokeList.get(select).getName();
     }
 
     public void setSelectedPokemon(String pSelectedPokemon) {
