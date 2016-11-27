@@ -22,7 +22,7 @@
                         <p:outputLabel value="Pokemon:" />
                         <p:selectOneListbox style="width: 200px;" value="#{selectOneListBoxBean.selectedPokemon}" filter="true" filterMatchMode="contains" var="p">                            
                             <f:selectItems value="#{selectOneListBoxBean.pokeList}" var="pokemon"
-                                           itemValue="#{pokemon}" itemLabel="##{pokemon.pokId} - #{pokemon.pokIzena}" />                                
+                                           itemValue="#{pokemon}" itemLabel="##{pokemon.id} - #{pokemon.name}" />                                
                             <f:ajax render="pokeImage" />
                             <p:column>
                                 <p:graphicImage value="/irudiak/pokemon/#{p.pokId}.png" width="40"/>
