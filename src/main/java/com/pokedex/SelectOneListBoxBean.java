@@ -2,11 +2,9 @@ package com.pokedex;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 @ManagedBean
 @SessionScoped
@@ -16,7 +14,7 @@ public class SelectOneListBoxBean {
     public String selectedPokemon;
 
     public SelectOneListBoxBean() {
-        this.pokeList = new ArrayList<Pokemon>();
+        this.pokeList = new ArrayList<>();
         this.pokeList.add(new Pokemon(1, "Bulbasaur"));
         this.pokeList.add(new Pokemon(2, "Ivysaur"));
         this.pokeList.add(new Pokemon(3, "Venusaur"));
@@ -37,7 +35,10 @@ public class SelectOneListBoxBean {
         return selectedPokemon;
     }
 
-    public String getSelectedPokemonName() {        
+    public String getSelectedPokemonName() {
+        if(selectedPokemon == null) {
+            return "";
+        }
         return Integer.toString(Integer.parseInt(selectedPokemon));
     }
 
