@@ -44,7 +44,7 @@ public class SelectOneListBoxBean {
     public void setSelectedPokemon(String pSelectedPokemon) {
         for (Pokemon aux : pokeList) {
             if (aux.toString().equals(pSelectedPokemon)) {
-                this.selectedPokemon = String.valueOf(aux.getPokId());
+                this.selectedPokemon = String.valueOf(aux.getId());
                 break;
             }
         }
