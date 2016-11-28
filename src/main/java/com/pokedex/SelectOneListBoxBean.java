@@ -14,6 +14,9 @@ public class SelectOneListBoxBean {
     public String selectedPokemon;
 
     public SelectOneListBoxBean() {
+        
+        selectedPokemon = null;
+        
         this.pokeList = new ArrayList<>();
         this.pokeList.add(new Pokemon(1, "Bulbasaur"));
         this.pokeList.add(new Pokemon(2, "Ivysaur"));
@@ -50,9 +53,5 @@ public class SelectOneListBoxBean {
                 break;
             }
         }
-    }
-
-    public String submitTraining() {
-        return "selectedTraining";
     }
 }
