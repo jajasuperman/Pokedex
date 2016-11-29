@@ -4,13 +4,15 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <h:form>
-        <p:growl id="messages" />
+        
 
-        <p:splitButton value="===" actionListener="#{buttonView.save}" update="messages">
-            <p:menuitem value="Update" actionListener="#{buttonView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w" />
-            <p:menuitem value="Delete" actionListener="#{buttonView.delete}" ajax="false" icon="ui-icon-close" />
+        <p:splitButton style="position:absolute;bottom: 5%;right: 10%;">
+            <p:menuitem value="Kontua Sortu" icon="ui-icon-triangle-1-e"/>
             <p:separator />
-            <p:menuitem value="Homepage" url="./home.xhtml" icon="ui-icon-extlink" />
+            <p:menuitem value="Logeatu" icon="ui-icon-triangle-1-e" />
+            <p:menuitem value="Irten (Saioa Itxi)" icon="ui-icon-power" />
+            <p:separator />
+            <p:menuitem value="Ataria" url="./home.xhtml" icon="ui-icon-extlink" />
         </p:splitButton>
     </h:form>
 

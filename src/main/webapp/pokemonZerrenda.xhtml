@@ -10,7 +10,7 @@
         <h:head>           
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>PrimeFaces</title>
+                <title>Zerrenda</title>
             </f:facet>
         </h:head>
 
@@ -21,7 +21,7 @@
 
                     <div class="ui-g-12 ui-md-2">
 
-                        <ui:include src="hamburgesaDespleglable.xhtml"/>
+                        <!--<ui:include src="hamburgesaDespleglable.xhtml"/>-->
 
                         <p:outputLabel value="Pokemon:" />
                         <p:selectOneListbox style="width: 200px;" value="#{selectOneListBoxBean.selectedPokemon}" filter="true" filterMatchMode="contains" var="p">                            
@@ -29,7 +29,7 @@
                                            itemValue="#{pokemon}" itemLabel="##{pokemon.id} - #{pokemon.name}" />                                
                             <f:ajax event="change" execute="@this" render="pokeImage" />
                             <p:column>
-                                <p:graphicImage value="/irudiak/pokemon/#{p.id}.png" width="40"/>
+                                    <p:graphicImage value="/irudiak/pokemon/#{p.id}.png" width="40"/>
                             </p:column>
                             <p:column>
                                 ##{p.id} - #{p.name}
@@ -48,7 +48,10 @@
                                 <br />
 
                                 <div style="text-align: center;">
+                                
                                     <p:graphicImage value="/irudiak/pokemon/#{selectOneListBoxBean.selectedPokemon}.png" width="200" height="200" style="border-style: inset; border-color: black;" cache="false" />
+                                    <p:graphicImage value="/irudiak/gif/#{selectOneListBoxBean.selectedPokemon}.gif" width="200" height="200" style="border-style: inset; border-color: black;" cache="false"/>
+                                
                                 </div>
 
                                 <br />
