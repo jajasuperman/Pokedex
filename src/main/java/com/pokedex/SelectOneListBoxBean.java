@@ -45,6 +45,10 @@ public class SelectOneListBoxBean {
         int select = Integer.parseInt(selectedPokemon) - 1;
         return pokeList.get(select).getName();
     }
+    
+    public String getSelectedPokemonNameLowerCase() {
+        return getSelectedPokemonName().toLowerCase();
+    }
 
     public void setSelectedPokemon(String pSelectedPokemon) {
         for (Pokemon aux : pokeList) {

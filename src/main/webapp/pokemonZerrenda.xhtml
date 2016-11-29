@@ -38,7 +38,7 @@
                                            itemValue="#{pokemon}" itemLabel="##{pokemon.id} - #{pokemon.name}" />                                
                             <f:ajax event="change" execute="@this" render="pokeImage" />
                             <p:column>
-                                    <p:graphicImage value="/irudiak/pokemon/#{p.id}.png" width="40"/>
+                                <p:graphicImage value="/irudiak/pokemon/#{p.id}.png" width="40"/>
                             </p:column>
                             <p:column>
                                 ##{p.id} - #{p.name}
@@ -57,19 +57,30 @@
                                 <br />
 
                                 <div style="text-align: center;">
-                                
-                                    <p:graphicImage value="/irudiak/pokemon/#{selectOneListBoxBean.selectedPokemon}.png" width="200" height="200" style="border-style: inset; border-color: black;" cache="false" />
-                                    <p:graphicImage value="/irudiak/gif/#{selectOneListBoxBean.selectedPokemon}.gif" width="200" height="200" style="border-style: inset; border-color: black;" cache="false"/>
-                                
+
+                                    <p:graphicImage value="/irudiak/pokemon/#{selectOneListBoxBean.selectedPokemon}.png" width="300" height="300" style="border-style: inset; border-color: black;" cache="false" />
+                                    <p:graphicImage value="/irudiak/gif/#{selectOneListBoxBean.selectedPokemonNameLowerCase}.gif" style="border-style: inset; border-color: black;" cache="false"/>
+
                                 </div>
 
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
                                 <br />
 
                                 <div style="text-align: center;">
                                     <p:tabView style="display: inline-block;">
-                                        <p:tab title="#{selectOneListBoxBean.selectedPokemonName}">
-                                            <h:outputText value="The story begins as Don Vito Corleone3333..." />
-                                        </p:tab>
+                                        <ui:include src="info1.xhtml"/>
+                                        <ui:include src="info2.xhtml"/>
+                                        <ui:include src="info3.xhtml"/>
+                                        <ui:include src="info3.xhtml"/>
+                                        <ui:include src="evolution.xhtml"/>
+                                        <ui:include src="stats.xhtml"/>
+                                        <ui:include src="location.xhtml"/>
+
                                     </p:tabView>
                                 </div>
                             </h:panelGroup>
