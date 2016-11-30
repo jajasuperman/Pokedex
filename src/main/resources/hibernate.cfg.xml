@@ -40,11 +40,23 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
-    <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
-    <property name="hibernate.connection.url">jdbc:derby://localhost:1527/sample</property>
-    <property name="hibernate.connection.username">app</property>
-    <property name="hibernate.connection.password">app</property>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
+        <property name="hibernate.connection.driver_class">com.sun.sql.jdbc.sqlserver.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pokedex?zeroDateTimeBehavior=convertToNull [root on Default schema]</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+    </session-factory>
+    <hibernate-mapping package="org.hibernate.tutorial.domain">
+        <class name="Info1" table="pokemon_species">
+            <id name="id" column="EVENT_ID">
+                <generator class="native"/>
+            </id>
+            <property name="type1" type="timestamp" column="EVENT_DATE"/>
+            <property name="type2"/>
+            <property name="generation"/>
+            <property name="weight"/>
+            <property name="height"/>
+        </class>
+    </hibernate-mapping>
 </hibernate-configuration>
