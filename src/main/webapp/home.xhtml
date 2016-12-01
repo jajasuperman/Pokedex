@@ -23,16 +23,18 @@
             </style>
 
         </h:head>
-        <h:body class="body1">
+        <h:body class="body1" onkeyup="if (event.keyCode === 13) { document.getElementById('img6').src='irudiak/besteak/start.png';location.href='./pokemonZerrenda.xhtml'; return false;}"
+                onkeydown="if (event.keyCode === 13) { document.getElementById('img6').src='irudiak/besteak/start2.png'; return false;}">
             <h:form>
                 <div>
-                    <img src="http://fusionlacedillusions.com/wp-content/uploads/2016/07/English_Pok%C3%A9mon_logo.svg_.png" id="img1" name="img1" style="height: 200px;width: 700px;position:absolute;top:5%;left:5%;"/>
-                    <img src="http://www.clipartbest.com/cliparts/9TR/Ryx/9TRRyxBAc.png" id="img2" name="img2" style="height: 250px;width: 250px;position:absolute;right:10%;top:10%;"/>
-                    <img src="http://1.bp.blogspot.com/-NUZVDfhF5ao/U8f0cVvYNDI/AAAAAAAAAFk/jz3DYZ_mvFM/s1600/Pidgeot+(1).png" id="img3" name="img3" style="height: 130px;width: 130px;position:absolute;bottom: 30%;left:22%;"/>
-                    <img src="http://vignette4.wikia.nocookie.net/pokemon/images/a/aa/446Munchlax_Pokemon_Ranger_Guardian_Signs.png/revision/latest?cb=20150102095726" id="img4" name="img4" style="height: 110px;width: 110px;position:absolute;bottom: 12%;left:14%;"/>
-                    <img src="http://www.hobbyconsolas.com/sites/hobbyconsolas.com/public/media/image/2014/03/288532-origen-todos-nombres-pokemon-ii.png" id="img5" name="img5" style="height: 90px;width: 90px;position:absolute;bottom: 7%;left:25%;"/>
-                    <img src="http://www.gifizer.com/gifs/cover/7cb081af7e6f2b0fa93214cd38f3afaf.png" id="img6" name="img6" style="height: 200px;width: 250px;position:absolute;right:40%;top:40%;" 
-                         onclick="location.href='./pokemonZerrenda.xhtml'" onmouseover=""/>
+                    <img src="irudiak/besteak/pokemon_logo.png" id="img1" name="img1" style="height: 200px;width: 700px;position:absolute;top:5%;left:5%;"/>
+                    <img src="irudiak/besteak/ho-oh.png" id="img2" name="img2" style="height: 250px;width: 250px;position:absolute;right:10%;top:10%;"/>
+                    <img src="irudiak/besteak/pidgeot.png" id="img3" name="img3" style="height: 130px;width: 130px;position:absolute;bottom: 30%;left:22%;"/>
+                    <img src="irudiak/besteak/munchlax.png" id="img4" name="img4" style="height: 110px;width: 110px;position:absolute;bottom: 12%;left:14%;"/>
+                    <img src="irudiak/besteak/totodile.png" id="img5" name="img5" style="height: 90px;width: 90px;position:absolute;bottom: 7%;left:25%;"/>
+                    <img src="irudiak/besteak/start.png" id="img6" name="img6" style="height: 110px;width: 250px;position:absolute;right:40%;top:40%;" 
+                         onclick="location.href='./pokemonZerrenda.xhtml'" onmouseover="this.src='irudiak/besteak/start2.png';" 
+                         onmouseout="this.src='irudiak/besteak/start.png';"/>
                 </div>
             </h:form>
         </h:body>

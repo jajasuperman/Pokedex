@@ -24,6 +24,9 @@ public class SelectOneListBoxBean {
         this.pokeList.add(new Pokemon(4, "Charmander"));
         this.pokeList.add(new Pokemon(5, "Charmeleon"));
         this.pokeList.add(new Pokemon(6, "Charizard"));
+        this.pokeList.add(new Pokemon(7, "Squirtle"));
+        this.pokeList.add(new Pokemon(8, "Wartortle"));
+        this.pokeList.add(new Pokemon(9, "Blastoise"));
     }
 
     public List<Pokemon> getPokeList() {
