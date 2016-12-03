@@ -1,32 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.pokedex;
 
-/**
- *
- * @author ADN
- */
 public class Stats {
     
-    private int hp;
-    private int atk;
-    private int def;
-    private int spAt;
-    private int spDe;
-    private int spd;
-   
-    public Stats(int pHp, int pAtk, int pDef, int pSpAt, int pSpDe, int pSpd){
-        this.hp = pHp;
-        this.atk = pAtk;
-        this.def = pDef;
-        this.spAt = pSpAt;
-        this.spDe = pSpDe;
-        this.spd = pSpd;
+    private final int hp;
+    private final int atk;
+    private final int def;
+    private final int spAt;
+    private final int spDe;
+    private final int spd;
+
+    public Stats(int hp, int atk, int def, int spAt, int spDe, int spd) {
+        this.hp = hp;
+        this.atk = atk;
+        this.def = def;
+        this.spAt = spAt;
+        this.spDe = spDe;
+        this.spd = spd;
+    }     
+
+    public int getHp() {
+        return hp;
     }
-   
+
+    public int getAtk() {
+        return atk;
+    }
+
+    public int getDef() {
+        return def;
+    }
+
+    public int getSpAt() {
+        return spAt;
+    }
+
+    public int getSpDe() {
+        return spDe;
+    }
+
+    public int getSpd() {
+        return spd;
+    }         
 
     public int total(){
         return this.hp + this.atk + this.def + this.spAt + this.spDe + this.spd;

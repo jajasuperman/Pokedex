@@ -33,16 +33,36 @@ public class Pokemon {
         return id;
     }
 
-    public void setId(int pId) {
-        this.id = pId;
+    public Info1 getInfo1() {
+        return info1;
+    }
+
+    public Info2 getInfo2() {
+        return info2;
+    }
+
+    public Info3 getInfo3() {
+        return info3;
+    }
+
+    public Info4 getInfo4() {
+        return info4;
+    }
+
+    public Evolution getEvo() {
+        return evo;
+    }
+
+    public Stats getStats() {
+        return stats;
+    }
+
+    public Location getLoc() {
+        return loc;
     }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String pName) {
-        this.name = pName;
     }
 
 }

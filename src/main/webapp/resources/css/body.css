@@ -1,0 +1,6 @@
+body {
+    background: url("../../resources/irudiak/besteak/background.png") repeat center center fixed;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+}  

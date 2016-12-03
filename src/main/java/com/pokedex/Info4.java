@@ -1,19 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.pokedex;
 
-/**
- *
- * @author ADN
- */
 public class Info4 {
     
-    private String egg;
-    private boolean baby; // 0 false (ez da baby) , 1 true (baby da)
-    private int hatch; // hatch counter
-    private String growth; // growth rate
+    private final String egg;
+    private final boolean baby; // 0 false (ez da baby) , 1 true (baby da)
+    private final int hatch; // hatch counter
+    private final String growth; // growth rate
+
+    public Info4(String egg, boolean baby, int hatch, String growth) {
+        this.egg = egg;
+        this.baby = baby;
+        this.hatch = hatch;
+        this.growth = growth;
+    }
+
+    public String getEgg() {
+        return egg;
+    }
+
+    public boolean isBaby() {
+        return baby;
+    }
+
+    public int getHatch() {
+        return hatch;
+    }
+
+    public String getGrowth() {
+        return growth;
+    }
+    
     
 }

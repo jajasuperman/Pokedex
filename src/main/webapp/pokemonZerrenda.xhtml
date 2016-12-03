@@ -13,74 +13,9 @@
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>Zerrenda</title>
             </f:facet>
-            <style>
-                .body1 {
-                    background: url(http://i.imgur.com/ALKEdhV.png) repeat center center fixed;
-                    -webkit-background-size: contain;
-                    -moz-background-size: contain;
-                    background-size: contain;
-                }               
-            </style>
-            <style>
-                .detail-stats {
-                    min-width: 200px;
-                    max-width: 300px;
-                    margin-top: 10px;
-                }
-
-                .detail-stats-row {
-                    display: flex;
-                    margin-top: 2px;
-                    margin-left: 2px
-                }
-                .detail-stats-row span:nth-child(even) {
-                    -ms-flex-preferred-size: 0;
-                    flex-basis: 0;
-                    -webkit-box-flex: 2;
-                    -ms-flex-positive: 2;
-                    flex-grow: 2;
-                    color: #fff
-                }
-                @media (max-width: 767px) {
-                    .detail-stats {
-                        min-width: 150px;
-                        max-width: 200px
-                    }
-                    .detail-stats-row span:nth-child(even) {
-                        -webkit-box-flex: 1;
-                        -ms-flex-positive: 1;
-                        flex-grow: 1
-                    }
-                }
-                .detail-stats-row span:nth-child(odd) {
-                    -ms-flex-preferred-size: 0;
-                    flex-basis: 0;
-                    -webkit-box-flex: 1;
-                    -ms-flex-positive: 1;
-                    flex-grow: 1
-                }
-                .stat-bar {
-                    position: relative;
-                    background: #ededed
-                }
-                .stat-bar-bg,
-                .stat-bar-fg {
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0
-                }
-                .stat-bar-bg {
-                    z-index: 100000;
-                    -webkit-transform-origin: left;
-                    transform-origin: left
-                }
-                .stat-bar-fg {
-                    z-index: 200000;
-                    margin-left: 2px
-                }
-            </style>
+            
+            <h:outputStylesheet name="css/body.css" />
+            <h:outputStylesheet name="css/stats.css" />
 
         </h:head>
 
@@ -100,7 +35,7 @@
                                            itemValue="#{pokemon}" itemLabel="##{pokemon.id} - #{pokemon.name}" />                                
                             <f:ajax event="change" execute="@this" render="pokeImage" />
                             <p:column>
-                                <p:graphicImage value="/irudiak/pokemon/#{p.id}.png" width="40"/>
+                                <p:graphicImage value="resources/irudiak/pokemon/#{p.id}.png" width="40"/>
                             </p:column>
                             <p:column>
                                 ##{p.id} - #{p.name}
@@ -118,8 +53,8 @@
                                 <br />
 
                                 <div style="text-align: center;">
-                                    <p:graphicImage value="/irudiak/pokemon/#{selectOneListBoxBean.selectedPokemon}.png" width="300" height="300" style="border-style: inset; border-color: black;" cache="false" />
-                                    <p:graphicImage value="/irudiak/gif/#{selectOneListBoxBean.selectedPokemon}.gif" style="border-style: inset; border-color: black;" cache="false"/>
+                                    <p:graphicImage value="resources/irudiak/pokemon/#{selectOneListBoxBean.selectedPokemon}.png" width="300" height="300" style="border-style: inset; border-color: black;" cache="false" />
+                                    <p:graphicImage value="resources/irudiak/gif/#{selectOneListBoxBean.selectedPokemon}.gif" style="border-style: inset; border-color: black;" cache="false"/>
                                 </div>
 
                                 <br />
