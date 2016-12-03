@@ -3,35 +3,91 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
 
-    <p:tab title="Stats">
-        <h:outputText value="HP: " />
-        <h:outputText value="" />
-
-        <br />
-
-        <h:outputText value="Attack: " />
-        <h:outputText value="" />
-
-        <br />
-
-        <h:outputText value="Defense: " />
-        <h:outputText value="" />
-
-        <br />
-
-        <h:outputText value="Special Attack: " />
-        <h:outputText value="" />
-
-        <br />
-
-        <h:outputText value="Special Defense: " />
-        <h:outputText value="" />
-        
-        <br />
-
-        <h:outputText value="Speed: " />
-        <h:outputText value="" />
-
-    </p:tab>
-
+        <p:tab title="Stats">
+            <div class="detail-stats" style="margin: auto">
+                <div class="detail-stats-row">
+                    <span>
+                        <h:outputText id="textHP" value="HP" />
+                    </span>
+                    <span class="stat-bar">
+                        <div style="background: rgb(105, 194, 61); transform: scaleX(0.4274509803921569)" class="stat-bar-bg">
+                            
+                        </div>
+                        <div style="color: #fff" class="stat-bar-fg">
+                            <h:outputText id="valueHP" value="109" />
+                        </div>
+                    </span>
+                </div>
+                
+                <div class="detail-stats-row">
+                    <span>
+                        <h:outputText id="textAttack" value="Attack" />
+                    </span>
+                    <span class="stat-bar">
+                        <div style="background: rgb(105, 194, 61); transform: scaleX(0.1764705882352941)" class="stat-bar-bg">
+                            
+                        </div>
+                        <div style="color: #fff" class="stat-bar-fg">
+                            <h:outputText id="valueAttack" value="49" />
+                        </div>
+                    </span>
+                </div>
+                
+                <div class="detail-stats-row">
+                    <span>
+                        <h:outputText id="textDefense" value="Defense" />
+                    </span>
+                    <span class="stat-bar">
+                        <div style="background: rgb(105, 194, 61); transform: scaleX(0.003921568627451)" class="stat-bar-bg">
+                            
+                        </div>
+                        <div style="color: #fff" class="stat-bar-fg">
+                            <h:outputText id="valueDefense" value="1" />
+                        </div>
+                    </span>
+                </div>
+                
+                <div class="detail-stats-row">
+                    <span>
+                        <h:outputText id="textSpeed" value="Speed" />
+                    </span>
+                    <span class="stat-bar">
+                        <div style="background: rgb(105, 194, 61); transform: scaleX(0.1764705882352941)" class="stat-bar-bg">
+                            
+                        </div>
+                        <div style="color: #fff" class="stat-bar-fg">
+                            <h:outputText id="valueSpeed" value="45" />
+                        </div>
+                    </span>
+                </div>
+                
+                <div class="detail-stats-row">
+                    <span>
+                        <h:outputText id="textSpAtk" value="Sp Atk" />
+                    </span>
+                    <span class="stat-bar">
+                        <div style="background: rgb(105, 194, 61); transform: scaleX(0.2549019607843137)" class="stat-bar-bg">
+                            
+                        </div>
+                        <div style="color: #fff" class="stat-bar-fg">
+                            <h:outputText id="valueSpAtk" value="65" />
+                        </div>
+                    </span>
+                </div>
+                
+                <div class="detail-stats-row">
+                    <span>
+                        <h:outputText id="textSpDef" value="Sp Def" />
+                    </span>
+                    <span class="stat-bar">
+                        <div style="background: rgb(105, 194, 61); transform: scaleX(0.2549019607843137)" class="stat-bar-bg">
+                            
+                        </div>
+                        <div style="color: #fff" class="stat-bar-fg">
+                            <h:outputText id="valueSpDef" value="65" />
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </p:tab>
 </ui:composition>

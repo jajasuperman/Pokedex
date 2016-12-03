@@ -15,19 +15,21 @@
         </h:head>
         <h:body>
             <h:form>
+                <p:messages showDetail="true"/>
                 <h:outputLabel for="username" value="Erabiltzailea:" />
                 <br />
-                <p:inputText id="username" required="true" label="username" />
+                <p:inputText id="date" label="username">
+                    <f:validateRegex pattern="[a-zA-Z]+"/>
+                </p:inputText>
                 <br />
                 <h:outputLabel for="password" value="Pasahitza:" />
                 <br />
                 <p:password id="password" required="true" label="password" />
                 <br />
                 <br />
-                <p:messages showDetail="true"/>
                 <p:captcha label="Captcha" />
                 <br />
-                <p:commandButton value="Login" />
+                <p:commandButton value="Sign Up" action="#{captchaView.submit}" ajax="false" icon="ui-icon-check"/>
             </h:form>
         </h:body>
     </f:view>
