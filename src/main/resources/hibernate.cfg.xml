@@ -43,7 +43,8 @@ Contributor(s):
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
         <property name="hibernate.connection.driver_class">com.sun.sql.jdbc.sqlserver.SQLServerDriver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pokedex?zeroDateTimeBehavior=convertToNull [root on Default schema]</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pokedex?zeroDateTimeBehavior=convertToNull</property>
+        <property name="dialect">org.hibernate.dialect.DerbyDialect</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
     </session-factory>
