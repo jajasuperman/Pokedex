@@ -54,5 +54,6 @@
 }
 .stat-bar-fg {
     z-index: 200000;
-    margin-left: 2px
+    margin-left: 2px;
+    color: black;
 }
