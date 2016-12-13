@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2016 a las 11:28:36
+-- Tiempo de generación: 13-12-2016 a las 09:47:07
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.20
 
@@ -19,6 +19,17 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `pokedex`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `dittu`
+--
+
+CREATE TABLE `dittu` (
+  `Izena` varchar(50) NOT NULL,
+  `Pokemon` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -24260,6 +24271,17 @@ INSERT INTO `encounters` (`id`, `version_id`, `location_area_id`, `encounter_slo
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `erabiltzaile`
+--
+
+CREATE TABLE `erabiltzaile` (
+  `Izena` varchar(50) NOT NULL,
+  `Pasahitza` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `generations`
 --
 
@@ -34475,6 +34497,13 @@ INSERT INTO `types` (`id`, `identifier`) VALUES
 --
 
 --
+-- Indices de la tabla `dittu`
+--
+ALTER TABLE `dittu`
+  ADD PRIMARY KEY (`Izena`,`Pokemon`),
+  ADD KEY `pokemonId` (`Pokemon`);
+
+--
 -- Indices de la tabla `egg_groups`
 --
 ALTER TABLE `egg_groups`
@@ -34489,6 +34518,12 @@ ALTER TABLE `encounters`
   ADD KEY `location_area_id` (`location_area_id`),
   ADD KEY `encounter_slot_id` (`encounter_slot_id`),
   ADD KEY `pokemon_id` (`pokemon_id`);
+
+--
+-- Indices de la tabla `erabiltzaile`
+--
+ALTER TABLE `erabiltzaile`
+  ADD PRIMARY KEY (`Izena`);
 
 --
 -- Indices de la tabla `generations`
@@ -34597,6 +34632,13 @@ ALTER TABLE `types`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `dittu`
+--
+ALTER TABLE `dittu`
+  ADD CONSTRAINT `erabiltzaileIzena` FOREIGN KEY (`Izena`) REFERENCES `erabiltzaile` (`Izena`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pokemonId` FOREIGN KEY (`Pokemon`) REFERENCES `pokemon` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `encounters`
