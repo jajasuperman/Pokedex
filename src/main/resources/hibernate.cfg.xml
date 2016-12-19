@@ -47,17 +47,24 @@ Contributor(s):
         <property name="dialect">org.hibernate.dialect.DerbyDialect</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
+        <mapping resource="Dittu.hbm.xml" />
+        <mapping resource="Egg_groups.hbm.xml" />
+        <mapping resource="Encounters.hbm.xml" />
+        <mapping resource="Erabiltzaile.hbm.xml" />
+        <mapping resource="Generations.hbm.xml" />
+        <mapping resource="Growth_rates.hbm.xml" />
+        <mapping resource="Location_areas.hbm.xml" />
+        <mapping resource="Locations.hbm.xml" />
+        <mapping resource="Pokemon.hbm.xml" />
+        <mapping resource="Pokemon_colors.hbm.xml" />
+        <mapping resource="Pokemon_egg_groups.hbm.xml" />
+        <mapping resource="Pokemon_habitats.hbm.xml" />
+        <mapping resource="Pokemon_shapes.hbm.xml" />
+        <mapping resource="Pokemon_species.hbm.xml" />
+        <mapping resource="Pokemon_stats.hbm.xml" />
+        <mapping resource="Pokemon_types.hbm.xml" />
+        <mapping resource="Regions.hbm.xml" />
+        <mapping resource="Stats.hbm.xml" />
+        <mapping resource="Types.hbm.xml" />
     </session-factory>
-    <hibernate-mapping package="org.hibernate.tutorial.domain">
-        <class name="Info1" table="pokemon_species">
-            <id name="id" column="EVENT_ID">
-                <generator class="native"/>
-            </id>
-            <property name="type1" type="timestamp" column="EVENT_DATE"/>
-            <property name="type2"/>
-            <property name="generation"/>
-            <property name="weight"/>
-            <property name="height"/>
-        </class>
-    </hibernate-mapping>
 </hibernate-configuration>
