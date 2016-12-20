@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -41,13 +41,13 @@ Contributor(s):
 -->
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
-        <property name="hibernate.connection.driver_class">com.sun.sql.jdbc.sqlserver.SQLServerDriver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pokedex?zeroDateTimeBehavior=convertToNull</property>
-        <property name="dialect">org.hibernate.dialect.DerbyDialect</property>
+        <property name="dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
-        <mapping resource="Dittu.hbm.xml" />
+        <!-- <mapping resource="Dittu.hbm.xml" /> -->
         <mapping resource="Egg_groups.hbm.xml" />
         <mapping resource="Encounters.hbm.xml" />
         <mapping resource="Erabiltzaile.hbm.xml" />
@@ -57,12 +57,12 @@ Contributor(s):
         <mapping resource="Locations.hbm.xml" />
         <mapping resource="Pokemon.hbm.xml" />
         <mapping resource="Pokemon_colors.hbm.xml" />
-        <mapping resource="Pokemon_egg_groups.hbm.xml" />
+        <!-- <mapping resource="Pokemon_egg_groups.hbm.xml" /> -->
         <mapping resource="Pokemon_habitats.hbm.xml" />
         <mapping resource="Pokemon_shapes.hbm.xml" />
         <mapping resource="Pokemon_species.hbm.xml" />
-        <mapping resource="Pokemon_stats.hbm.xml" />
-        <mapping resource="Pokemon_types.hbm.xml" />
+        <!-- <mapping resource="Pokemon_stats.hbm.xml" /> -->
+        <!-- <mapping resource="Pokemon_types.hbm.xml" /> -->
         <mapping resource="Regions.hbm.xml" />
         <mapping resource="Stats.hbm.xml" />
         <mapping resource="Types.hbm.xml" />

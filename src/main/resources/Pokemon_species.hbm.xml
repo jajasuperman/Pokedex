@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.pokedex.db.Db_dittu" table="dittu">
-        <id name="izena" type="String">
+    <class name="com.pokedex.db.Db_pokemon_species" table="pokemon_species">
+        <id name="id" type="integer">
             <generator class="assigned"/>
         </id>
-        <property name="pokemon" type="int"/>
+        <property name="identifier" type="string"/>
+        <property name="generation_id" type="integer"/>
+        <property name="evolves_from_species_id" type="integer"/>
+        <property name="evolution_chain_id" type="integer"/>
+        <property name="color_id" type="integer"/>
+        <property name="shape_id" type="integer"/>
+        <property name="habitat_id" type="integer"/>
+        <property name="gender_rate" type="integer"/>
+        <property name="capture_rate" type="integer"/>
+        <property name="base_happiness" type="integer"/>
+        <property name="is_baby" type="integer"/>
+        <property name="hatch_counter" type="integer"/>
+        <property name="growth_rate_id" type="integer"/>
     </class>
 </hibernate-mapping>

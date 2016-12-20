@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.pokedex.db.Db_dittu" table="dittu">
-        <id name="izena" type="String">
+    <class name="com.pokedex.db.Db_pokemon_habitats" table="pokemon_habitats">
+        <id name="id" type="integer">
             <generator class="assigned"/>
         </id>
-        <property name="pokemon" type="int"/>
+        <property name="identifier" type="string"/>
     </class>
 </hibernate-mapping>
