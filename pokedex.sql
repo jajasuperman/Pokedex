@@ -27,8 +27,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `dittu` (
-  `Izena` varchar(50) NOT NULL,
-  `Pokemon` int(11) NOT NULL
+  `izena` varchar(50) NOT NULL,
+  `pokemon` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -24275,8 +24275,8 @@ INSERT INTO `encounters` (`id`, `version_id`, `location_area_id`, `encounter_slo
 --
 
 CREATE TABLE `erabiltzaile` (
-  `Izena` varchar(50) NOT NULL,
-  `Pasahitza` varchar(100) NOT NULL
+  `izena` varchar(50) NOT NULL,
+  `pasahitza` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -34637,8 +34637,8 @@ ALTER TABLE `types`
 -- Filtros para la tabla `dittu`
 --
 ALTER TABLE `dittu`
-  ADD CONSTRAINT `erabiltzaileIzena` FOREIGN KEY (`Izena`) REFERENCES `erabiltzaile` (`Izena`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pokemonId` FOREIGN KEY (`Pokemon`) REFERENCES `pokemon` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `erabiltzaileIzena` FOREIGN KEY (`izena`) REFERENCES `erabiltzaile` (`izena`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pokemonId` FOREIGN KEY (`pokemon`) REFERENCES `pokemon` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `encounters`
