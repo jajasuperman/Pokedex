@@ -36,6 +36,16 @@
             <artifactId>primefaces</artifactId>  
             <version>6.0</version>  
         </dependency> 
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbyclient</artifactId>
+            <version>10.13.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.5</version>
+        </dependency>
     </dependencies>
 
     <build>
