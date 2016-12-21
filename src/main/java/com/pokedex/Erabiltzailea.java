@@ -120,7 +120,7 @@ public class Erabiltzailea {
         
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().getSessionMap().clear();
-        String aux = "/logIn.xhtml";
+        String aux = "/pokemonZerrenda.xhtml";
         context.getExternalContext().redirect(context.getExternalContext().getRequestContextPath() + aux); 
     }
 }
