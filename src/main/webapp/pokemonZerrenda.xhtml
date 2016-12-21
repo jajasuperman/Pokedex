@@ -20,7 +20,6 @@
         </h:head>
 
         <h:body class="body1">            
-
             <h:form>
                 <div class="ui-g">
 
@@ -85,7 +84,7 @@
                     <p:outputLabel value="#{erabiltzailea.getSaioa()}" style="background-color: #dddddd; border: 3px solid black; padding: 8px; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);" />
                     <br />
                     <br />
-                    <p:commandButton ajax="false"  value="LogOut" action="#{erabiltzailea.saioaItxi()}" icon="ui-icon-person" style="border: 3px solid black; padding: 8px; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);" />
+                    <p:commandButton value="LogOut" actionListener="#{erabiltzailea.saioaItxi()}" icon="ui-icon-person" />
                 </div>
             </h:form>
 

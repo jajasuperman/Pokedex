@@ -116,9 +116,11 @@ public class Erabiltzailea {
     }
 
     public void saioaItxi() throws IOException {
+
+        
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().getSessionMap().clear();
-        String aux = "/pokemonZerrenda.xhtml";
-        context.getExternalContext().redirect(context.getExternalContext().getRequestContextPath() + aux);
+        String aux = "/logIn.xhtml";
+        context.getExternalContext().redirect(context.getExternalContext().getRequestContextPath() + aux); 
     }
 }
