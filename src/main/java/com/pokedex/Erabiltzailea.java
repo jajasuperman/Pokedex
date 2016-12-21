@@ -10,7 +10,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -44,7 +43,6 @@ public class Erabiltzailea {
     }
 
     // METODO PARA LOGEARSE ( SI TE LOGEAS VAS A LA ZERRENDA )
-    
     public void logeatu() throws IOException {
         FacesContext context1 = FacesContext.getCurrentInstance();
         FacesMessage message;
@@ -67,21 +65,20 @@ public class Erabiltzailea {
             izena = null;
             pasahitza = null;
         }
-        
+
         context1.getExternalContext().redirect(context1.getExternalContext().getRequestContextPath() + aux);
 //        return aux; // si lo haces bien vas a la zerrenda una vez logeado y sino pues al login a volver
         // a intentarlo.
     }
-    
+
     // ERREGISTRATZEKO METODOA ( CAMBIA EN LOS MENSAJES QUE SE PONEN EN PANTALLA )
     // SI TE REGISTRAS VAS A LA ZERRENDA DIRECTAMENTE SALTANDOTE EL LOGIN
-    
-        public String erregistratu() {
-        RequestContext context = RequestContext.getCurrentInstance();
+    public void erregistratu() throws IOException {
+        FacesContext context1 = FacesContext.getCurrentInstance();
         FacesMessage message;
         boolean erregistratuta;
-        String aux = "pokemonZerrenda.xhtml";
-        if (izena != null && pasahitza != null && pasahitza.length()> 6) {
+        String aux = "/pokemonZerrenda.xhtml";
+        if (izena != null && pasahitza != null && pasahitza.length() > 6) {
             erregistratuta = true;
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Ongi Etorri", izena);
             saioaGorde(izena);
@@ -93,17 +90,15 @@ public class Erabiltzailea {
         FacesContext.getCurrentInstance().addMessage(null, message);
 
         if (!erregistratuta) {
-            aux = "signUp.html";
-        }
-        else{
+            aux = "/signUp.html";
+        } else {
             izena = null;
             pasahitza = null;
         }
-        return aux;
+        context1.getExternalContext().redirect(context1.getExternalContext().getRequestContextPath() + aux);
     }
 
-        //METODOS DE LA SESSION CASEROS DEL TIO EKA
-        
+    //METODOS DE LA SESSION CASEROS DEL TIO EKA
     public void saioaGorde(String p) {
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().getSessionMap().put("user", p);
@@ -112,19 +107,18 @@ public class Erabiltzailea {
     public String getSaioa() {
         FacesContext context = FacesContext.getCurrentInstance();
         String aux;
-        if (context.getExternalContext().getSessionMap().get("user")==null) {
+        if (context.getExternalContext().getSessionMap().get("user") == null) {
             aux = "Anonimoa";
-        } 
-        else {
+        } else {
             aux = (String) context.getExternalContext().getSessionMap().get("user");
         }
         return aux;
     }
 
-    public String saioaItxi() {
-            FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-           return "pokemonZerrenda.xhtml";
-       
-     
+    public void saioaItxi() throws IOException {
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.getExternalContext().getSessionMap().clear();
+        String aux = "/pokemonZerrenda.xhtml";
+        context.getExternalContext().redirect(context.getExternalContext().getRequestContextPath() + aux);
     }
 }
