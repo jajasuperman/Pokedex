@@ -14,6 +14,9 @@ public class Db_regions {
     private int id;
     private String identifier;
 
+    public Db_regions() {
+    }
+
     public Db_regions(int id, String identifier) {
         this.id = id;
         this.identifier = identifier;

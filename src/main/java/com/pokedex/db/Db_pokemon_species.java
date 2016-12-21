@@ -14,11 +14,11 @@ public class Db_pokemon_species {
     private int id;
     private String identifier;
     private int generation_id;
-    private int evolves_from_species_id;
+    private Integer evolves_from_species_id;
     private int evolution_chain_id;
     private int color_id;
-    private int shape_id;
-    private int habitat_id;
+    private Db_pokemon_shapes shape_id;
+    private Db_pokemon_habitats habitat_id;
     private int gender_rate;
     private int capture_rate;
     private int base_happiness;
@@ -26,7 +26,10 @@ public class Db_pokemon_species {
     private int hatch_counter;
     private int growth_rate_id;
 
-    public Db_pokemon_species(int id, String identifier, int generation_id, int evolves_from_species_id, int evolution_chain_id, int color_id, int shape_id, int habitat_id, int gender_rate, int capture_rate, int base_happiness, int is_baby, int hatch_counter, int growth_rate_id) {
+    public Db_pokemon_species() {
+    }
+
+    public Db_pokemon_species(int id, String identifier, int generation_id, int evolves_from_species_id, int evolution_chain_id, int color_id, Db_pokemon_shapes shape_id, Db_pokemon_habitats habitat_id, int gender_rate, int capture_rate, int base_happiness, int is_baby, int hatch_counter, int growth_rate_id) {
         this.id = id;
         this.identifier = identifier;
         this.generation_id = generation_id;
@@ -68,11 +71,11 @@ public class Db_pokemon_species {
         this.generation_id = generation_id;
     }
 
-    public int getEvolves_from_species_id() {
+    public Integer getEvolves_from_species_id() {
         return evolves_from_species_id;
     }
 
-    public void setEvolves_from_species_id(int evolves_from_species_id) {
+    public void setEvolves_from_species_id(Integer evolves_from_species_id) {
         this.evolves_from_species_id = evolves_from_species_id;
     }
 
@@ -92,19 +95,19 @@ public class Db_pokemon_species {
         this.color_id = color_id;
     }
 
-    public int getShape_id() {
+    public Db_pokemon_shapes getShape_id() {
         return shape_id;
     }
 
-    public void setShape_id(int shape_id) {
+    public void setShape_id(Db_pokemon_shapes shape_id) {
         this.shape_id = shape_id;
     }
 
-    public int getHabitat_id() {
+    public Db_pokemon_habitats getHabitat_id() {
         return habitat_id;
     }
 
-    public void setHabitat_id(int habitat_id) {
+    public void setHabitat_id(Db_pokemon_habitats habitat_id) {
         this.habitat_id = habitat_id;
     }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-    <class name="com.pokedex.db.Db_pokemon_species" table="pokemon_species">
+<hibernate-mapping package="com.pokedex.db">
+    <class name="Db_pokemon_species" table="pokemon_species">
         <id name="id" type="integer">
             <generator class="assigned"/>
         </id>
@@ -11,8 +11,8 @@
         <property name="evolves_from_species_id" type="integer"/>
         <property name="evolution_chain_id" type="integer"/>
         <property name="color_id" type="integer"/>
-        <property name="shape_id" type="integer"/>
-        <property name="habitat_id" type="integer"/>
+        <many-to-one name="shape_id" class="Db_pokemon_shapes" unique="true" cascade="all" />
+        <many-to-one name="habitat_id" class="Db_pokemon_habitats" unique="true" cascade="all" />
         <property name="gender_rate" type="integer"/>
         <property name="capture_rate" type="integer"/>
         <property name="base_happiness" type="integer"/>

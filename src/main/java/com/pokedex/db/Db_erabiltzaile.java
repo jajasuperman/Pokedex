@@ -14,6 +14,9 @@ public class Db_erabiltzaile {
     private String izena;
     private String pasahitza;
 
+    public Db_erabiltzaile() {
+    }
+
     public Db_erabiltzaile(String izena, String pasahitza) {
         this.izena = izena;
         this.pasahitza = pasahitza;

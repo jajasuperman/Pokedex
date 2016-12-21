@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-    <class name="com.pokedex.db.Db_egg_groups" table="egg_groups">
+<hibernate-mapping package="com.pokedex.db">
+    <class name="Db_egg_groups" table="egg_groups">
         <id name="id" type="integer">
             <generator class="assigned"/>
         </id>

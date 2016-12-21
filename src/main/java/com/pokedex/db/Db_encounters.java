@@ -19,6 +19,9 @@ public class Db_encounters {
     private int min_level;
     private int max_level;
 
+    public Db_encounters() {
+    }
+
     public Db_encounters(int id, int version_id, int location_area_id, int encounter_slot_id, int pokemon_id, int min_level, int max_level) {
         this.id = id;
         this.version_id = version_id;

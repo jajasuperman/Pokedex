@@ -14,6 +14,9 @@ public class Db_stats {
     private int id;
     private String identifier;
 
+    public Db_stats() {
+    }
+
     public Db_stats(int id, String identifier) {
         this.id = id;
         this.identifier = identifier;

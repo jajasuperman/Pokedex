@@ -14,6 +14,9 @@ public class Db_pokemon_shapes {
     private int id;
     private String identifier;
 
+    public Db_pokemon_shapes() {
+    }
+
     public Db_pokemon_shapes(int id, String identifier) {
         this.id = id;
         this.identifier = identifier;

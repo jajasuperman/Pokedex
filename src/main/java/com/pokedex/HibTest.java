@@ -14,7 +14,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.util.List;
 
-import com.pokedex.db.Db_pokemon_habitats;
+import com.pokedex.db.*;
 /**
  *
  * @author ADN
@@ -88,15 +88,38 @@ public class HibTest {
         sf.close();
 
     }
+    
+    private void gg(int i) {
+
+        //hasieratu
+        Session session = sf.openSession();
+
+        session.beginTransaction();
+
+        //egin nahi duguna
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+
+        System.out.println("Pokemon species: " + fro.getHabitat_id().getIdentifier() + " !!!!!!!!!!!!!");
+
+        session.getTransaction().commit();
+        
+        //itxi
+        session.close();
+
+        sf.close();
+
+    }
 
     public static void main(String[] args) {
         HibTest froManager = new HibTest();
 
 //        froManager.persistDb_pokemon_habitats();
 
-        froManager.findDb_pokemon_habitats(8);
+//        froManager.findDb_pokemon_habitats(8);
 
 //        froManager.findAll();
+
+        froManager.gg(52);
         
         System.exit(0);
 

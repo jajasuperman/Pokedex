@@ -15,6 +15,9 @@ public class Db_generations {
     private int main_region_id;
     private String identifier;
 
+    public Db_generations() {
+    }
+
     public Db_generations(int id, int main_region_id, String identifier) {
         this.id = id;
         this.main_region_id = main_region_id;

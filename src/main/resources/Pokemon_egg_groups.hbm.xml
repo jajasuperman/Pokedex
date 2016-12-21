@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-    <class name="com.pokedex.db.Db_pokemon_egg_groups" table="pokemon_egg_groups">
-        <id name="izena" type="String">
-            <generator class="assigned"/>
-        </id>
-        <property name="pokemon" type="int"/>
+<hibernate-mapping package="com.pokedex.db">
+    <class name="Db_pokemon_egg_groups" table="pokemon_egg_groups">
+        <composite-id>
+            <key-property name="species_id" type="integer" />
+            <key-property name="egg_group_id" type="integer" />
+        </composite-id>
     </class>
 </hibernate-mapping>

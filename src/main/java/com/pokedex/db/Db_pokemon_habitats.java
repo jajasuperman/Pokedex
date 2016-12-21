@@ -14,7 +14,8 @@ public class Db_pokemon_habitats {
     private int id;
     private String identifier;
     
-    public Db_pokemon_habitats() {}
+    public Db_pokemon_habitats() {
+    }
 
     public Db_pokemon_habitats(int id, String identifier) {
         this.id = id;

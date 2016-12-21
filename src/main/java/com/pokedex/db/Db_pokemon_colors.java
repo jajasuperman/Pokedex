@@ -14,6 +14,9 @@ public class Db_pokemon_colors {
     private int id;
     private String identifier;
 
+    public Db_pokemon_colors() {
+    }
+
     public Db_pokemon_colors(int id, String identifier) {
         this.id = id;
         this.identifier = identifier;

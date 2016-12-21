@@ -18,6 +18,9 @@ public class Db_pokemon {
     private int weight;
     private int base_experience;
 
+    public Db_pokemon() {
+    }
+
     public Db_pokemon(int id, String identifier, int species_id, int height, int weight, int base_experience) {
         this.id = id;
         this.identifier = identifier;

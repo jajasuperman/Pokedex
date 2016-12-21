@@ -15,6 +15,9 @@ public class Db_pokemon_types {
     private int type_id;
     private int slot;
 
+    public Db_pokemon_types() {
+    }
+
     public Db_pokemon_types(int pokemon_id, int type_id, int slot) {
         this.pokemon_id = pokemon_id;
         this.type_id = type_id;

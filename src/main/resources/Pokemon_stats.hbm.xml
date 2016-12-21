@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-    <class name="com.pokedex.db.Db_pokemon_stats" table="pokemon_stats">
-        <id name="izena" type="String">
-            <generator class="assigned"/>
-        </id>
-        <property name="pokemon" type="int"/>
+<hibernate-mapping package="com.pokedex.db">
+    <class name="Db_pokemon_stats" table="pokemon_stats">
+        <composite-id>
+            <key-property name="pokemon_id" type="integer" />
+            <key-property name="stat_id" type="integer" />
+        </composite-id>
+        <property name="base_stat" type="integer"/>
     </class>
 </hibernate-mapping>

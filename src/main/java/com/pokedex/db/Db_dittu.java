@@ -14,6 +14,9 @@ public class Db_dittu{
     private String izena;
     private int pokemon;
 
+    public Db_dittu() {
+    }
+
     public Db_dittu(String izena, int pokemon) {
         this.izena = izena;
         this.pokemon = pokemon;

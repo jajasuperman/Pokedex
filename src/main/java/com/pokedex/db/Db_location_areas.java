@@ -15,6 +15,9 @@ public class Db_location_areas {
     private int location_id;
     private String identifier;
 
+    public Db_location_areas() {
+    }
+
     public Db_location_areas(int id, int location_id, String identifier) {
         this.id = id;
         this.location_id = location_id;

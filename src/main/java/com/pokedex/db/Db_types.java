@@ -14,6 +14,9 @@ public class Db_types {
     private int id;
     private String identifier;
 
+    public Db_types() {
+    }
+
     public Db_types(int id, String identifier) {
         this.id = id;
         this.identifier = identifier;

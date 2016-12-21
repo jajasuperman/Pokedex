@@ -14,6 +14,9 @@ public class Db_growth_rates {
     private int id;
     private String identifier;
 
+    public Db_growth_rates() {
+    }
+
     public Db_growth_rates(int id, String identifier) {
         this.id = id;
         this.identifier = identifier;

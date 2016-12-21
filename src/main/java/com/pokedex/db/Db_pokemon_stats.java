@@ -15,6 +15,9 @@ public class Db_pokemon_stats {
     private int stat_id;
     private int base_stat;
 
+    public Db_pokemon_stats() {
+    }
+
     public Db_pokemon_stats(int pokemon_id, int stat_id, int base_stat) {
         this.pokemon_id = pokemon_id;
         this.stat_id = stat_id;

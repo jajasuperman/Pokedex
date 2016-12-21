@@ -14,6 +14,9 @@ public class Db_egg_groups {
     private int id;
     private String identifier;
 
+    public Db_egg_groups() {
+    }
+
     public Db_egg_groups(int id, String identifier) {
         this.id = id;
         this.identifier = identifier;

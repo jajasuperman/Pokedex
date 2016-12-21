@@ -14,6 +14,9 @@ public class Db_pokemon_egg_groups {
     private int species_id;
     private int egg_group_id;
 
+    public Db_pokemon_egg_groups() {
+    }
+
     public Db_pokemon_egg_groups(int species_id, int egg_group_id) {
         this.species_id = species_id;
         this.egg_group_id = egg_group_id;
