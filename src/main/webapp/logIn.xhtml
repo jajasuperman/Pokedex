@@ -10,35 +10,35 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>PrimeFaces</title>
+                <title>LogIn</title>
             </f:facet>
             <h:outputStylesheet name="css/body.css" />
         </h:head>
         <h:body>
-
-            <img src="resources/irudiak/besteak/ho-oh.png" id="img2" name="img2" style="height: 250px;width: 250px;position:absolute;right:10%;top:10%;"/>
             <img src="resources/irudiak/besteak/pidgeot.png" id="img3" name="img3" style="height: 130px;width: 130px;position:absolute;bottom: 30%;left:22%;"/>
             <img src="resources/irudiak/besteak/munchlax.png" id="img4" name="img4" style="height: 110px;width: 110px;position:absolute;bottom: 12%;left:14%;"/>
             <img src="resources/irudiak/besteak/totodile.png" id="img5" name="img5" style="height: 90px;width: 90px;position:absolute;bottom: 7%;left:25%;"/>
-            <div style="position: absolute;top: 10%;left: 30%;border: 2px solid black;radius: 5px;">
+            <div style="position: absolute;top: 10%;left: 30%;border: 3px solid black; padding: 8px; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">
                 <h:form>
                     <p:messages showDetail="true"/>
-                    <h:outputLabel for="username" value="Erabiltzailea:" />
+                    <h:outputLabel for="date" value="Erabiltzailea:" />
                     <br />
-                    <p:inputText id="date" label="username">
+                    <p:inputText id="date" label="username" required="true" placeholder="Erabiltzailea" value="#{erabiltzailea.izena}" >
                         <f:validateRegex pattern="[a-zA-Z]+"/>
                     </p:inputText>
                     <br />
                     <h:outputLabel for="password" value="Pasahitza:" />
                     <br />
-                    <p:password id="password" required="true" label="password" />
+                    <p:password id="password" required="true" label="password" placeholder="pasahitzaa" value="#{erabiltzailea.pasahitza}" >
+                    </p:password>
                     <br />
                     <br />
-                    <p:captcha label="Captcha" />
+                    <!--<p:captcha label="Captcha" />-->
                     <br />
-                    <p:commandButton value="Baieztatu" action="#{captchaView.submit}" ajax="false" icon="ui-icon-check"/>
+                    <p:commandButton value="Baieztatu" action="#{erabiltzailea.logeatu}" ajax="false" icon="ui-icon-check"/>
                 </h:form>
             </div>
+            <ui:include src="stack.xhtml"/>
         </h:body>
     </f:view>
 </html>
