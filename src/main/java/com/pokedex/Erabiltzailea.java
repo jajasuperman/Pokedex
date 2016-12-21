@@ -5,6 +5,7 @@
  */
 package com.pokedex;
 
+import java.io.IOException;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -44,11 +45,11 @@ public class Erabiltzailea {
 
     // METODO PARA LOGEARSE ( SI TE LOGEAS VAS A LA ZERRENDA )
     
-    public String logeatu() {
+    public void logeatu() throws IOException {
         FacesContext context1 = FacesContext.getCurrentInstance();
         FacesMessage message;
         boolean logeatuta;
-        String aux = "pokemonZerrenda.xhtml";
+        String aux = "/pokemonZerrenda.xhtml";
         if (izena != null && izena.equals("admin") && pasahitza.equals("administratzailea")) {//faltan las buenas llamadas a la datu base.
             logeatuta = true;
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Ongi Etorri", izena);
@@ -60,12 +61,15 @@ public class Erabiltzailea {
         context1.addMessage(null, message);
 
         if (!logeatuta) {// si fallas vuelta al login
-            aux = "logIn.xhtml";
+            //aux = "logIn.xhtml";
+            context1.getExternalContext().redirect(context1.getExternalContext().getRequestContextPath() + "/logIn.xhtml");
         } else {// si haciertas, se te borra lo que escribiste para que al entrar otra vez no aparezca
             izena = null;
             pasahitza = null;
         }
-        return aux; // si lo haces bien vas a la zerrenda una vez logeado y sino pues al login a volver
+        
+        context1.getExternalContext().redirect(context1.getExternalContext().getRequestContextPath() + aux);
+//        return aux; // si lo haces bien vas a la zerrenda una vez logeado y sino pues al login a volver
         // a intentarlo.
     }
     
