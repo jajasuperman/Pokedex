@@ -137,46 +137,35 @@ public class Deiak {
     public String getPokeEvolution() {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         int aux, ken, max;
-        ken = 2;
-        max = 2;
         String evo = "";
         aux = fro.getEvolution_chain_id();
         //begirada bat eman pls;
-        if (id == 1) {
-            for (int i = (id); i <= (id + 2); i++) {
-                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
-                if (fro.getEvolution_chain_id() == aux) {
-                    evo = evo + " " + fro.getIdentifier() + " ";
-                }
-            }
-        } else if (id == 2) {
-            for (int i = (id - 1); i <= (id + 2); i++) {
-                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
-                if (fro.getEvolution_chain_id() == aux) {
-                    evo = evo + " " + fro.getIdentifier() + " ";
-                }
-            }
-
-        } else if (id == 720) {
-            for (int i = (id - 2); i <= (id + 1); i++) {
-                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
-                if (fro.getEvolution_chain_id() == aux) {
-                    evo = evo + " " + fro.getIdentifier() + " ";
-                }
-            }
-        } else if (id == 721) {
-            for (int i = (id - 2); i <= (id); i++) {
-                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
-                if (fro.getEvolution_chain_id() == aux) {
-                    evo = evo + " " + fro.getIdentifier() + " ";
-                }
-            }
-        } else {
-            for (int i = (id - 2); i <= (id + 2); i++) {
-                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
-                if (fro.getEvolution_chain_id() == aux) {
-                    evo = evo + " " + fro.getIdentifier() + " ";
-                }
+        switch (id) {
+            case 1:
+                ken = 0;
+                max = 2;
+                break;
+            case 2:
+                ken = 1;
+                max = 2;
+                break;
+            case 720:
+                ken = 2;
+                max = 1;
+                break;
+            case 721:
+                ken = 2;
+                max = 0;
+                break;
+            default:
+                ken = 2;
+                max = 2;
+                break;
+        }
+        for (int i = (id - ken); i <= (id + max); i++) {
+            fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+            if (fro.getEvolution_chain_id() == aux) {
+                evo = evo + " " + fro.getIdentifier() + " ";
             }
         }
 
