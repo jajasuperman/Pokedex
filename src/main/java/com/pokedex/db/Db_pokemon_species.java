@@ -5,6 +5,8 @@
  */
 package com.pokedex.db;
 
+import java.util.Set;
+
 /**
  *
  * @author ADN
@@ -13,10 +15,10 @@ public class Db_pokemon_species {
             
     private int id;
     private String identifier;
-    private int generation_id;
-    private Integer evolves_from_species_id;
+    private Db_generations generation_id;
+    private Db_pokemon_species evolves_from_species_id;
     private int evolution_chain_id;
-    private int color_id;
+    private Db_pokemon_colors color_id;
     private Db_pokemon_shapes shape_id;
     private Db_pokemon_habitats habitat_id;
     private int gender_rate;
@@ -24,12 +26,13 @@ public class Db_pokemon_species {
     private int base_happiness;
     private int is_baby;
     private int hatch_counter;
-    private int growth_rate_id;
+    private Db_growth_rates growth_rate_id;
+    private Set<Db_egg_groups> egg_group_id;
 
     public Db_pokemon_species() {
     }
 
-    public Db_pokemon_species(int id, String identifier, int generation_id, int evolves_from_species_id, int evolution_chain_id, int color_id, Db_pokemon_shapes shape_id, Db_pokemon_habitats habitat_id, int gender_rate, int capture_rate, int base_happiness, int is_baby, int hatch_counter, int growth_rate_id) {
+    public Db_pokemon_species(int id, String identifier, Db_generations generation_id, Db_pokemon_species evolves_from_species_id, int evolution_chain_id, Db_pokemon_colors color_id, Db_pokemon_shapes shape_id, Db_pokemon_habitats habitat_id, int gender_rate, int capture_rate, int base_happiness, int is_baby, int hatch_counter, Db_growth_rates growth_rate_id, Set<Db_egg_groups> egg_group_id) {
         this.id = id;
         this.identifier = identifier;
         this.generation_id = generation_id;
@@ -44,8 +47,8 @@ public class Db_pokemon_species {
         this.is_baby = is_baby;
         this.hatch_counter = hatch_counter;
         this.growth_rate_id = growth_rate_id;
+        this.egg_group_id = egg_group_id;
     }
-
 
     public int getId() {
         return id;
@@ -63,19 +66,19 @@ public class Db_pokemon_species {
         this.identifier = identifier;
     }
 
-    public int getGeneration_id() {
+    public Db_generations getGeneration_id() {
         return generation_id;
     }
 
-    public void setGeneration_id(int generation_id) {
+    public void setGeneration_id(Db_generations generation_id) {
         this.generation_id = generation_id;
     }
 
-    public Integer getEvolves_from_species_id() {
+    public Db_pokemon_species getEvolves_from_species_id() {
         return evolves_from_species_id;
     }
 
-    public void setEvolves_from_species_id(Integer evolves_from_species_id) {
+    public void setEvolves_from_species_id(Db_pokemon_species evolves_from_species_id) {
         this.evolves_from_species_id = evolves_from_species_id;
     }
 
@@ -87,11 +90,11 @@ public class Db_pokemon_species {
         this.evolution_chain_id = evolution_chain_id;
     }
 
-    public int getColor_id() {
+    public Db_pokemon_colors getColor_id() {
         return color_id;
     }
 
-    public void setColor_id(int color_id) {
+    public void setColor_id(Db_pokemon_colors color_id) {
         this.color_id = color_id;
     }
 
@@ -151,12 +154,20 @@ public class Db_pokemon_species {
         this.hatch_counter = hatch_counter;
     }
 
-    public int getGrowth_rate_id() {
+    public Db_growth_rates getGrowth_rate_id() {
         return growth_rate_id;
     }
 
-    public void setGrowth_rate_id(int growth_rate_id) {
+    public void setGrowth_rate_id(Db_growth_rates growth_rate_id) {
         this.growth_rate_id = growth_rate_id;
+    }
+    
+    public Set<Db_egg_groups> getEgg_group_id() {
+        return egg_group_id;
+    }
+    
+     public void setEgg_group_id(Set<Db_egg_groups> egg_group_id) {
+        this.egg_group_id = egg_group_id;
     }
 
 }

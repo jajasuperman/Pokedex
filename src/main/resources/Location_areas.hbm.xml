@@ -6,7 +6,7 @@
         <id name="id" type="integer">
             <generator class="assigned"/>
         </id>
-        <property name="location_id" type="integer"/>
+        <many-to-one name="location_id" class="Db_locations" unique="true" cascade="all" />
         <property name="identifier" type="string"/>
     </class>
 </hibernate-mapping>

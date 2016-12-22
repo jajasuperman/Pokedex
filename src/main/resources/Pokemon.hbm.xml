@@ -7,7 +7,7 @@
             <generator class="assigned"/>
         </id>
         <property name="identifier" type="string"/>
-        <property name="species_id" type="integer"/>
+        <many-to-one name="species_id" class="Db_pokemon_species" unique="true" cascade="all" />
         <property name="height" type="integer"/>
         <property name="weight" type="integer"/>
         <property name="base_experience" type="integer"/>

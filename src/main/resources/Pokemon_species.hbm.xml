@@ -7,10 +7,10 @@
             <generator class="assigned"/>
         </id>
         <property name="identifier" type="string"/>
-        <property name="generation_id" type="integer"/>
-        <property name="evolves_from_species_id" type="integer"/>
+        <many-to-one name="generation_id" class="Db_generations" unique="true" cascade="all" />
+        <many-to-one name="evolves_from_species_id" class="Db_pokemon_species" unique="true" cascade="all" />
         <property name="evolution_chain_id" type="integer"/>
-        <property name="color_id" type="integer"/>
+        <many-to-one name="color_id" class="Db_pokemon_colors" unique="true" cascade="all" />
         <many-to-one name="shape_id" class="Db_pokemon_shapes" unique="true" cascade="all" />
         <many-to-one name="habitat_id" class="Db_pokemon_habitats" unique="true" cascade="all" />
         <property name="gender_rate" type="integer"/>
@@ -18,6 +18,10 @@
         <property name="base_happiness" type="integer"/>
         <property name="is_baby" type="integer"/>
         <property name="hatch_counter" type="integer"/>
-        <property name="growth_rate_id" type="integer"/>
+        <many-to-one name="growth_rate_id" class="Db_growth_rates" unique="true" cascade="all" />
+        <set name="pokemon_species_id" table="pokemon_egg_groups" cascade="all">
+            <key column="id" />
+            <many-to-many column="species_id" class="Db_egg_groups"/>
+        </set>
     </class>
 </hibernate-mapping>

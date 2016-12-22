@@ -5,6 +5,8 @@
  */
 package com.pokedex.db;
 
+import java.util.Set;
+
 /**
  *
  * @author ADN
@@ -13,13 +15,15 @@ public class Db_egg_groups {
     
     private int id;
     private String identifier;
+    private Set<Db_pokemon_species> species_id;
 
     public Db_egg_groups() {
     }
 
-    public Db_egg_groups(int id, String identifier) {
+    public Db_egg_groups(int id, String identifier, Set<Db_pokemon_species> pokemon_species_id) {
         this.id = id;
         this.identifier = identifier;
+        this.species_id = pokemon_species_id;
     }
 
     public int getId() {
@@ -37,5 +41,13 @@ public class Db_egg_groups {
     public void setIdentifier(String identifier) {
         this.identifier = identifier;
     }
-       
+
+    public Set<Db_pokemon_species> getPokemon_species_id() {
+        return species_id;
+    }
+
+    public void setPokemon_species_id(Set<Db_pokemon_species> pokemon_species_id) {
+        this.species_id = pokemon_species_id;
+    }
+
 }

@@ -12,13 +12,13 @@ package com.pokedex.db;
 public class Db_generations {
     
     private int id;
-    private int main_region_id;
+    private Db_regions main_region_id;
     private String identifier;
 
     public Db_generations() {
     }
 
-    public Db_generations(int id, int main_region_id, String identifier) {
+    public Db_generations(int id, Db_regions main_region_id, String identifier) {
         this.id = id;
         this.main_region_id = main_region_id;
         this.identifier = identifier;
@@ -32,11 +32,11 @@ public class Db_generations {
         this.id = id;
     }
 
-    public int getMain_region_id() {
+    public Db_regions getMain_region_id() {
         return main_region_id;
     }
 
-    public void setMain_region_id(int main_region_id) {
+    public void setMain_region_id(Db_regions main_region_id) {
         this.main_region_id = main_region_id;
     }
 

@@ -13,7 +13,7 @@ public class Db_pokemon {
     
     private int id;
     private String identifier;
-    private int species_id;
+    private Db_pokemon_species species_id;
     private int height;
     private int weight;
     private int base_experience;
@@ -21,7 +21,7 @@ public class Db_pokemon {
     public Db_pokemon() {
     }
 
-    public Db_pokemon(int id, String identifier, int species_id, int height, int weight, int base_experience) {
+    public Db_pokemon(int id, String identifier, Db_pokemon_species species_id, int height, int weight, int base_experience) {
         this.id = id;
         this.identifier = identifier;
         this.species_id = species_id;
@@ -46,11 +46,11 @@ public class Db_pokemon {
         this.identifier = identifier;
     }
 
-    public int getSpecies_id() {
+    public Db_pokemon_species getSpecies_id() {
         return species_id;
     }
 
-    public void setSpecies_id(int species_id) {
+    public void setSpecies_id(Db_pokemon_species species_id) {
         this.species_id = species_id;
     }
 

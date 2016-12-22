@@ -13,16 +13,16 @@ public class Db_encounters {
     
     private int id;
     private int version_id;
-    private int location_area_id;
+    private Db_location_areas location_area_id;
     private int encounter_slot_id;
-    private int pokemon_id;
+    private Db_pokemon pokemon_id;
     private int min_level;
     private int max_level;
 
     public Db_encounters() {
     }
 
-    public Db_encounters(int id, int version_id, int location_area_id, int encounter_slot_id, int pokemon_id, int min_level, int max_level) {
+    public Db_encounters(int id, int version_id, Db_location_areas location_area_id, int encounter_slot_id, Db_pokemon pokemon_id, int min_level, int max_level) {
         this.id = id;
         this.version_id = version_id;
         this.location_area_id = location_area_id;
@@ -48,11 +48,11 @@ public class Db_encounters {
         this.version_id = version_id;
     }
 
-    public int getLocation_area_id() {
+    public Db_location_areas getLocation_area_id() {
         return location_area_id;
     }
 
-    public void setLocation_area_id(int location_area_id) {
+    public void setLocation_area_id(Db_location_areas location_area_id) {
         this.location_area_id = location_area_id;
     }
 
@@ -64,11 +64,11 @@ public class Db_encounters {
         this.encounter_slot_id = encounter_slot_id;
     }
 
-    public int getPokemon_id() {
+    public Db_pokemon getPokemon_id() {
         return pokemon_id;
     }
 
-    public void setPokemon_id(int pokemon_id) {
+    public void setPokemon_id(Db_pokemon pokemon_id) {
         this.pokemon_id = pokemon_id;
     }
 

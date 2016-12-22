@@ -7,9 +7,9 @@
             <generator class="assigned"/>
         </id>
         <property name="version_id" type="integer"/>
-        <property name="location_area_id" type="integer"/>
+        <many-to-one name="location_area_id" class="Db_location_areas" unique="true" cascade="all" />
         <property name="encounter_slot_id" type="integer"/>
-        <property name="pokemon_id" type="integer"/>
+        <many-to-one name="pokemon_id" class="Db_pokemon"  unique="true" cascade="all" />
         <property name="min_level" type="integer"/>
         <property name="max_level" type="integer"/>
     </class>

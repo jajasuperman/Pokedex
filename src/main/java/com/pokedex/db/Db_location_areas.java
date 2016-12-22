@@ -12,13 +12,13 @@ package com.pokedex.db;
 public class Db_location_areas {
     
     private int id;
-    private int location_id;
+    private Db_locations location_id;
     private String identifier;
 
     public Db_location_areas() {
     }
 
-    public Db_location_areas(int id, int location_id, String identifier) {
+    public Db_location_areas(int id, Db_locations location_id, String identifier) {
         this.id = id;
         this.location_id = location_id;
         this.identifier = identifier;
@@ -32,11 +32,11 @@ public class Db_location_areas {
         this.id = id;
     }
 
-    public int getLocation_id() {
+    public Db_locations getLocation_id() {
         return location_id;
     }
 
-    public void setLocation_id(int location_id) {
+    public void setLocation_id(Db_locations location_id) {
         this.location_id = location_id;
     }
 
