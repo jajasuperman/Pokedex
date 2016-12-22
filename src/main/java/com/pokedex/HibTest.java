@@ -105,7 +105,7 @@ public class HibTest {
         Iterator<Db_egg_groups> ema = fro.getEgg_group_id().iterator();
         
         while(ema.hasNext()){
-            System.out.println(ema.next().getIdentifier());
+            System.out.print(ema.next().getIdentifier() + "  ");
         }
 
         session.getTransaction().commit();
@@ -126,7 +126,7 @@ public class HibTest {
 
 //        froManager.findAll();
 
-        froManager.gg(1);
+        froManager.gg(151);
         
         System.exit(0);
 
