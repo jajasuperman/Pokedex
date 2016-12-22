@@ -5,28 +5,35 @@
  */
 package com.pokedex;
 
-import com.pokedex.db.Db_pokemon_species;
-import javax.faces.bean.ManagedBean;
+import com.pokedex.db.*;
+import java.util.Iterator;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import java.util.Set;
-
 /**
  *
  * @author Eka
  */
-@ManagedBean
+
 public class Deiak {
 
     private SessionFactory sf = null;
     private Session session;
+    
+    private static Deiak instance = null;
 
-    public Deiak() {
+    protected Deiak() {
         hasieratu();
+    }
+    
+    public static Deiak getInstance() {
+        if(instance == null) {
+            instance = new Deiak();
+        }
+        return instance;
     }
 
     private void hasieratu() {
@@ -40,80 +47,108 @@ public class Deiak {
         session = sf.openSession();
         session.beginTransaction();
 
-    }
+    }   
 
     public String getPokeIzena(int i) {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
         return fro.getIdentifier();
     }
 
+    public String getPokeGen(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getGeneration_id().getIdentifier();
+    }
+
+    public int getPokeWeight(int i) {
+        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, i);
+        return fro.getWeight();
+    }
+
+    public int getPokeHeight(int i) {
+        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, i);
+        return fro.getHeight();
+    }
+
+    public String getPokeColour(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getColor_id().getIdentifier();
+    }
+
+    public String getPokeShape(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getShape_id().getIdentifier();
+    }
+
+    public int getPokeGender(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getGender_rate();
+    }
+
+    public String getPokeHabitat(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getHabitat_id().getIdentifier();
+    }
+
+    public int getPokeCaptureRate(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getCapture_rate();
+    }
+
+    public int getPokeHappiness(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getBase_happiness();
+    }
+
+    public int getPokeBaseExp(int i) {
+        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, i);
+        return fro.getBase_experience();
+    }
+
+    public int getPokeHatch(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getHatch_counter();
+    }
+
+    public String getPokeGrowthRate(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getGrowth_rate_id().getIdentifier();
+    }
+
+    public int getPokeBaby(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+        return fro.getIs_baby();
+    }
+
+    public String getPokeEgg(int i) {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+
+        String eggs = "";
+
+        Iterator<Db_egg_groups> ema = fro.getEgg_group_id().iterator();
+
+        while (ema.hasNext()) {
+            eggs = eggs + ema.next().getIdentifier() + " ";
+        }
+
+        return eggs;
+    }
+
     /*
+    
     public String getPokeType1(int i) {
 
     }
 
     public String getPokeType2(int i) {
 
-    }
-    
-    public String getPokeGen(int i) {
-        
-    }
-    
-    public String getPokeWeight(int i) {
-        
-    }
-    
-    public String getPokeHeight(int i) {
-        
-    }
-    
-    public String getPokeGender(int i) {
-        
-    }
-    
-    public String getPokeColour(int i) {
-        
-    }
-    
-    public String getPokeShape(int i) {
-        
-    }
-    
-    public String getPokeHabitat(int i) {
-        
-    }
-    
-    public String getPokeCapture(int i) {
-        
-    }
-    
-    public String getPokeHappiness(int i) {
-        
-    }
-    
-    public String getPokeBaseExp(int i) {
-        
-    }   
-    
-    public String getPokeBaby(int i) {
-        
-    }
-    
-    public String getPokeHatch(int i) {
-        
-    }
-    
-    public String getPokeGrowthRate(int i) {
-        
-    }
+    }                                               
     
     public String getPokeEvolution(int i) {
         
-    }
+    }   
     
-    public String getPokeHP(int i) {
-        
+    public int getPokeHP(int i) {
+
     }
     
     public String getPokeAttack(int i) {
@@ -138,18 +173,14 @@ public class Deiak {
     
     public String getPokeLocations(int i) {
         
-    }
+    }    
 
      */
-    public String getPokeEgg(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
-        return fro.getEgg_group_id().toString();
-    }
-
     public static void main(String[] args) {
         Deiak froManager = new Deiak();
 
-        System.out.println(froManager.getPokeEgg(1));
+        System.out.println("Yee");
+        System.out.println(froManager.getPokeBaby(177));
 
         System.exit(0);
 

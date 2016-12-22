@@ -126,7 +126,7 @@ public class HibTest {
 
 //        froManager.findAll();
 
-        froManager.gg(151);
+        froManager.gg(1);
         
         System.exit(0);
 

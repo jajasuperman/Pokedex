@@ -14,19 +14,12 @@ public class SelectOneListBoxBean {
     public String selectedPokemon;
 
     public SelectOneListBoxBean() {
-        
+
         selectedPokemon = null;
-        
-        this.pokeList = new ArrayList<>();
-        this.pokeList.add(new Pokemon(1, "Bulbasaur"));
-        this.pokeList.add(new Pokemon(2, "Ivysaur"));
-        this.pokeList.add(new Pokemon(3, "Venusaur"));
-        this.pokeList.add(new Pokemon(4, "Charmander"));
-        this.pokeList.add(new Pokemon(5, "Charmeleon"));
-        this.pokeList.add(new Pokemon(6, "Charizard"));
-        this.pokeList.add(new Pokemon(7, "Squirtle"));
-        this.pokeList.add(new Pokemon(8, "Wartortle"));
-        this.pokeList.add(new Pokemon(9, "Blastoise"));
+
+        for (int i = 1; i <= 721; i++) {
+            this.pokeList.add(new Pokemon(i, Deiak.getInstance().getPokeIzena(i)));
+        }
     }
 
     public List<Pokemon> getPokeList() {
@@ -42,13 +35,13 @@ public class SelectOneListBoxBean {
     }
 
     public String getSelectedPokemonName() {
-        if(selectedPokemon == null) {
+        if (selectedPokemon == null) {
             return "";
         }
         int select = Integer.parseInt(selectedPokemon) - 1;
         return pokeList.get(select).getName();
     }
-   
+
     public void setSelectedPokemon(String pSelectedPokemon) {
         for (Pokemon aux : pokeList) {
             if (aux.toString().equals(pSelectedPokemon)) {
