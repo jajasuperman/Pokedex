@@ -9,7 +9,7 @@
         <property name="identifier" type="string"/>
         <set name="species_id" table="pokemon_egg_groups" cascade="all">
             <key column="egg_group_id" />
-            <many-to-many column="species_id" class="Db_egg_groups"/>
+            <many-to-many column="species_id" class="Db_pokemon_species"/>
         </set>
     </class>
 </hibernate-mapping>

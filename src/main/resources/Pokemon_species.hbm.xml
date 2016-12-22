@@ -19,9 +19,9 @@
         <property name="is_baby" type="integer"/>
         <property name="hatch_counter" type="integer"/>
         <many-to-one name="growth_rate_id" class="Db_growth_rates" unique="true" cascade="all" />
-        <set name="pokemon_species_id" table="pokemon_egg_groups" cascade="all">
-            <key column="id" />
-            <many-to-many column="species_id" class="Db_egg_groups"/>
+        <set name="egg_group_id" table="pokemon_egg_groups" cascade="all">
+            <key column="species_id" />
+            <many-to-many column="egg_group_id" class="Db_egg_groups"/>
         </set>
     </class>
 </hibernate-mapping>
