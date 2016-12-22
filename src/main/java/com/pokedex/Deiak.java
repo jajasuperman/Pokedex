@@ -142,14 +142,14 @@ public class Deiak {
         String evo = "";
         aux = fro.getEvolution_chain_id();
         //begirada bat eman pls;
-        if (aux == 1) {
+        if (id == 1) {
             for (int i = (id); i <= (id + 2); i++) {
                 fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
                 if (fro.getEvolution_chain_id() == aux) {
                     evo = evo + " " + fro.getIdentifier() + " ";
                 }
             }
-        } else if (aux == 2) {
+        } else if (id == 2) {
             for (int i = (id - 1); i <= (id + 2); i++) {
                 fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
                 if (fro.getEvolution_chain_id() == aux) {
@@ -157,14 +157,14 @@ public class Deiak {
                 }
             }
 
-        } else if (aux == 720) {
+        } else if (id == 720) {
             for (int i = (id - 2); i <= (id + 1); i++) {
                 fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
                 if (fro.getEvolution_chain_id() == aux) {
                     evo = evo + " " + fro.getIdentifier() + " ";
                 }
             }
-        } else if (aux == 721) {
+        } else if (id == 721) {
             for (int i = (id - 2); i <= (id); i++) {
                 fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
                 if (fro.getEvolution_chain_id() == aux) {
