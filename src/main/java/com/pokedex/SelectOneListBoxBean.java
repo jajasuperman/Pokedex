@@ -1,6 +1,5 @@
 package com.pokedex;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 
@@ -18,9 +17,11 @@ public class SelectOneListBoxBean {
     @ManagedProperty("#{pokemonService}")
     private PokemonService service;
 
+
     @PostConstruct
     public void init() {
         pokemons = service.getPokemons();
+
     }
 
     public Pokemon getPokemon() {
@@ -109,5 +110,11 @@ public class SelectOneListBoxBean {
 
     public String getGrowRate() {
         return Deiak.getInstance().getPokeGrowthRate();
+    }
+    
+    //EVOLUTION
+    
+    public String getEvolutions(){
+        return Deiak.getInstance().getPokeEvolution();
     }
 }

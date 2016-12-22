@@ -19,11 +19,13 @@ import org.hibernate.service.ServiceRegistry;
  * @author Eka
  */
 
+
 @ManagedBean
 public class Deiak {
 
     private SessionFactory sf = null;
     private Session session;
+
     
     public int id = 1;
     
@@ -32,9 +34,9 @@ public class Deiak {
     protected Deiak() {
         hasieratu();
     }
-    
+
     public static Deiak getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new Deiak();
         }
         return instance;
@@ -51,7 +53,7 @@ public class Deiak {
         session = sf.openSession();
         session.beginTransaction();
 
-    }   
+    }
 
     public String getPokeIzena(int i) {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
@@ -141,6 +143,44 @@ public class Deiak {
         return eggs;
     }
 
+    public String getPokeEvolution() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
+        int aux, ken, max;
+        String evo = "";
+        aux = fro.getEvolution_chain_id();
+        //begirada bat eman pls;
+        switch (id) {
+            case 1:
+                ken = 0;
+                max = 2;
+                break;
+            case 2:
+                ken = 1;
+                max = 2;
+                break;
+            case 720:
+                ken = 2;
+                max = 1;
+                break;
+            case 721:
+                ken = 2;
+                max = 0;
+                break;
+            default:
+                ken = 2;
+                max = 2;
+                break;
+        }
+        for (int i = (id - ken); i <= (id + max); i++) {
+            fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+            if (fro.getEvolution_chain_id() == aux) {
+                evo = evo + " " + fro.getIdentifier() + " ";
+            }
+        }
+
+        return evo;
+    }
+
     /*
     
     public String getPokeType1(int i) {
@@ -151,9 +191,7 @@ public class Deiak {
 
     }                                               
     
-    public String getPokeEvolution(int i) {
-        
-    }   
+ 
     
     public int getPokeHP(int i) {
 
@@ -189,6 +227,7 @@ public class Deiak {
 
         System.out.println("Yee");
 
+        System.out.println(froManager.getPokeBaby());
         System.exit(0);
 
     }
