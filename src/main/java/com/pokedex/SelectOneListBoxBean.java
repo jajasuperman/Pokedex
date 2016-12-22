@@ -59,7 +59,12 @@ public class SelectOneListBoxBean {
 
     /* INFO 2 */
     public String getGender() {
-        return Integer.toString(Deiak.getInstance().getPokeGender());
+        float generoak = Deiak.getInstance().getPokeGender();
+        if(generoak == -1) {
+            return "unknown";
+        }
+        float em = (generoak/8)*100;
+        return "♀" + em + "%     ♂" + (100-em) + "%";
     }
 
     public String getColour() {
@@ -69,14 +74,10 @@ public class SelectOneListBoxBean {
     public String getShape() {
         return Deiak.getInstance().getPokeShape();
     }
-/*
+
     public String getHabitat() {
-        String habitat = Deiak.getInstance().getPokeHabitat();
-        if(habitat == null) {
-            return "";
-        }
-        return habitat;
-    }*/
+        return Deiak.getInstance().getPokeHabitat();
+    }
 
     /* INFO 3*/
     public String getCaptureRate() {

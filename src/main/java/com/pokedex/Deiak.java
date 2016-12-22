@@ -90,14 +90,14 @@ public class Deiak {
         return fro.getGender_rate();
     }
 
-    /*public String getPokeHabitat() {
+    public String getPokeHabitat() {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
-        String habitat = fro.getHabitat_id().getIdentifier();
+        Db_pokemon_habitats habitat = fro.getHabitat_id();
         if(habitat == null) {
-            return "";           
+            return "-";           
         }
-        return habitat;
-    }*/
+        return habitat.getIdentifier();
+    }
 
     public int getPokeCaptureRate() {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
