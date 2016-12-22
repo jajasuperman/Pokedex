@@ -23,6 +23,8 @@ public class Deiak {
     private SessionFactory sf = null;
     private Session session;
     
+    public int id;
+    
     private static Deiak instance = null;
 
     protected Deiak() {
@@ -54,73 +56,73 @@ public class Deiak {
         return fro.getIdentifier();
     }
 
-    public String getPokeGen(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public String getPokeGen() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getGeneration_id().getIdentifier();
     }
 
-    public int getPokeWeight(int i) {
-        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, i);
+    public int getPokeWeight() {
+        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, id);
         return fro.getWeight();
     }
 
-    public int getPokeHeight(int i) {
-        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, i);
+    public int getPokeHeight() {
+        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, id);
         return fro.getHeight();
     }
 
-    public String getPokeColour(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public String getPokeColour() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getColor_id().getIdentifier();
     }
 
-    public String getPokeShape(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public String getPokeShape() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getShape_id().getIdentifier();
     }
 
-    public int getPokeGender(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public int getPokeGender() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getGender_rate();
     }
 
-    public String getPokeHabitat(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public String getPokeHabitat() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getHabitat_id().getIdentifier();
     }
 
-    public int getPokeCaptureRate(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public int getPokeCaptureRate() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getCapture_rate();
     }
 
-    public int getPokeHappiness(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public int getPokeHappiness() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getBase_happiness();
     }
 
-    public int getPokeBaseExp(int i) {
-        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, i);
+    public int getPokeBaseExp() {
+        Db_pokemon fro = (Db_pokemon) session.load(Db_pokemon.class, id);
         return fro.getBase_experience();
     }
 
-    public int getPokeHatch(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public int getPokeHatch() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getHatch_counter();
     }
 
-    public String getPokeGrowthRate(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public String getPokeGrowthRate() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getGrowth_rate_id().getIdentifier();
     }
 
-    public int getPokeBaby(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public int getPokeBaby() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         return fro.getIs_baby();
     }
 
-    public String getPokeEgg(int i) {
-        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+    public String getPokeEgg() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
 
         String eggs = "";
 

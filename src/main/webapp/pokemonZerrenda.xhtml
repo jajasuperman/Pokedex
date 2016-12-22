@@ -27,7 +27,7 @@
 
                         <!--<ui:include src="hamburgesaDespleglable.xhtml"/>-->
 
-                        <p:outputLabel value="Pokemon:" />
+                        <h3><p:outputLabel value="Pokemon Zerrenda" /></h3>
                         <p:selectOneListbox style="width: 200px;" value="#{selectOneListBoxBean.selectedPokemon}" filter="true" filterMatchMode="contains" var="p"
                                             scrollHeight="400">                            
                             <f:selectItems value="#{selectOneListBoxBean.pokeList}" var="pokemon"
@@ -47,13 +47,13 @@
                         <h:panelGroup id="pokeImage">
                             <h:panelGroup rendered="#{selectOneListBoxBean.selectedPokemonName ne ''}">
                                 <div style="text-align: center;">
-                                    <p:outputLabel  id="text" value="#{selectOneListBoxBean.selectedPokemonName}" style="size: portrait;" />
+                                    <h1><p:outputLabel  id="text" value="#{selectOneListBoxBean.selectedPokemonName}" style="size: portrait;" /></h1>
                                 </div>
                                 <br />
 
                                 <div style="text-align: center;">
                                     <p:graphicImage value="resources/irudiak/pokemon/#{selectOneListBoxBean.selectedPokemon}.png" width="300" height="300"  cache="false" />
-                                    <p:graphicImage value="resources/irudiak/gif/#{selectOneListBoxBean.selectedPokemon}.gif" style="border-style: inset; border-color: black;" cache="false"/>
+                                    <p:graphicImage value="resources/irudiak/gif/#{selectOneListBoxBean.selectedPokemon}.gif" cache="false"/>
                                 </div>
 
                                 <br />
