@@ -7,6 +7,7 @@ package com.pokedex;
 
 import com.pokedex.db.*;
 import java.util.Iterator;
+import javax.faces.bean.ManagedBean;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -18,12 +19,13 @@ import org.hibernate.service.ServiceRegistry;
  * @author Eka
  */
 
+@ManagedBean
 public class Deiak {
 
     private SessionFactory sf = null;
     private Session session;
     
-    public int id;
+    public int id = 1;
     
     private static Deiak instance = null;
 
@@ -86,10 +88,14 @@ public class Deiak {
         return fro.getGender_rate();
     }
 
-    public String getPokeHabitat() {
+    /*public String getPokeHabitat() {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
-        return fro.getHabitat_id().getIdentifier();
-    }
+        String habitat = fro.getHabitat_id().getIdentifier();
+        if(habitat == null) {
+            return "";           
+        }
+        return habitat;
+    }*/
 
     public int getPokeCaptureRate() {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
@@ -182,7 +188,6 @@ public class Deiak {
         Deiak froManager = new Deiak();
 
         System.out.println("Yee");
-        System.out.println(froManager.getPokeBaby(177));
 
         System.exit(0);
 

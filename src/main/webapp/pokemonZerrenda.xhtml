@@ -22,42 +22,35 @@
         <h:body class="body1">            
             <h:form>
                 <div class="ui-g">
-
                     <div class="ui-g-12 ui-md-2">
-
-                        <!--<ui:include src="hamburgesaDespleglable.xhtml"/>-->
-
                         <h3><p:outputLabel value="Pokemon Zerrenda" /></h3>
-                        <p:selectOneListbox style="width: 200px;" value="#{selectOneListBoxBean.selectedPokemon}" filter="true" filterMatchMode="contains" var="p"
+                        <p:selectOneListbox style="width: 200px;" value="#{selectOneListBoxBean.pokemon}" converter="pokemonConverter" filter="true" filterMatchMode="contains" var="p"
                                             scrollHeight="400">                            
-                            <f:selectItems value="#{selectOneListBoxBean.pokeList}" var="pokemon"
-                                           itemValue="#{pokemon}" itemLabel="##{pokemon.id} - #{pokemon.name}" />                                
-                            <f:ajax event="change" execute="@this" render="pokeImage" />
+                            <f:selectItems value="#{selectOneListBoxBean.pokemons}" var="pokemon"
+                                           itemValue="#{pokemon}" itemLabel="#{pokemon.name}" />    
+                            <f:ajax event="change" execute="@this" render="pokeImage" />                            
                             <p:column>
-                                <p:graphicImage value="resources/irudiak/pokemon/#{p.id}.png" width="40"/>
+                                <p:graphicImage value="resources/irudiak/pokemon/#{p.id + 1}.png" width="40"/>
                             </p:column>
                             <p:column>
-                                ##{p.id} - #{p.name}
+                                ##{p.id + 1} - #{p.name}
                             </p:column>
                         </p:selectOneListbox>
-
                     </div>
-
                     <div class="ui-g-12 ui-md-10 ui-g-nopad" id="pokeInfo">
+                        <p:outputLabel value="#{selectOneListBoxBean.pokemon.name}"/>
                         <h:panelGroup id="pokeImage">
-                            <h:panelGroup rendered="#{selectOneListBoxBean.selectedPokemonName ne ''}">
+                            <h:panelGroup rendered="#{not(empty selectOneListBoxBean.pokemon.name)}">                                
                                 <div style="text-align: center;">
-                                    <h1><p:outputLabel  id="text" value="#{selectOneListBoxBean.selectedPokemonName}" style="size: portrait;" /></h1>
+                                    <h1><p:outputLabel  id="text" value="#{selectOneListBoxBean.pokemon.name}" style="size: portrait;" /></h1>
                                 </div>
                                 <br />
 
                                 <div style="text-align: center;">
-                                    <p:graphicImage value="resources/irudiak/pokemon/#{selectOneListBoxBean.selectedPokemon}.png" width="300" height="300"  cache="false" />
-                                    <p:graphicImage value="resources/irudiak/gif/#{selectOneListBoxBean.selectedPokemon}.gif" cache="false"/>
+                                    <p:graphicImage value="resources/irudiak/pokemon/#{selectOneListBoxBean.pokemon.id + 1}.png" width="300" height="300"  cache="false" />
+                                    <p:graphicImage value="resources/irudiak/gif/#{selectOneListBoxBean.pokemon.id + 1}.gif" cache="false"/>
                                 </div>
 
-                                <br />
-                                <br />
                                 <br />
                                 <br />
                                 <br />
@@ -74,10 +67,11 @@
                                         <ui:include src="location.xhtml"/>                                      
                                     </p:tabView>
                                 </div>
+
                             </h:panelGroup>
                         </h:panelGroup>
                     </div>
-                </div>
+                </div>    
                 <ui:include src="stack.xhtml"/>
                 <h:panelGroup rendered="#{erabiltzailea.getSaioa() ne 'Anonimoa'}">
                     <div style="position: absolute; top: 10%; right: 7.5%;border: 3px solid black; padding: 8px; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">
@@ -89,7 +83,6 @@
                     </div>
                 </h:panelGroup>
             </h:form>
-
         </h:body>
     </f:view>
 </html>
