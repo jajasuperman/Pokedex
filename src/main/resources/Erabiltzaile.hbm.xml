@@ -7,5 +7,9 @@
             <generator class="assigned"/>
         </id>
         <property name="pasahitza" type="string"/>
+        <set name="pokemon" table="dittu" cascade="all">
+            <key column="izena" />
+            <many-to-many column="pokemon" class="Db_pokemon"/>
+        </set>
     </class>
 </hibernate-mapping>

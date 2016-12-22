@@ -5,6 +5,9 @@
  */
 package com.pokedex.db;
 
+import java.util.Set;
+
+
 /**
  *
  * @author ADN
@@ -17,17 +20,19 @@ public class Db_pokemon {
     private int height;
     private int weight;
     private int base_experience;
+    private Set<Db_erabiltzaile> izena;
 
     public Db_pokemon() {
     }
 
-    public Db_pokemon(int id, String identifier, Db_pokemon_species species_id, int height, int weight, int base_experience) {
+    public Db_pokemon(int id, String identifier, Db_pokemon_species species_id, int height, int weight, int base_experience, Set<Db_erabiltzaile> izena) {
         this.id = id;
         this.identifier = identifier;
         this.species_id = species_id;
         this.height = height;
         this.weight = weight;
         this.base_experience = base_experience;
+        this.izena = izena;
     }
 
     public int getId() {
@@ -76,6 +81,14 @@ public class Db_pokemon {
 
     public void setBase_experience(int base_experience) {
         this.base_experience = base_experience;
+    }
+
+    public Set<Db_erabiltzaile> getIzena() {
+        return izena;
+    }
+
+    public void setIzena(Set<Db_erabiltzaile> izena) {
+        this.izena = izena;
     }
 
 }

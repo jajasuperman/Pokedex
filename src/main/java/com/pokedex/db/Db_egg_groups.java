@@ -42,11 +42,11 @@ public class Db_egg_groups {
         this.identifier = identifier;
     }
 
-    public Set<Db_pokemon_species> getPokemon_species_id() {
+    public Set<Db_pokemon_species> getSpecies_id() {
         return species_id;
     }
 
-    public void setPokemon_species_id(Set<Db_pokemon_species> pokemon_species_id) {
+    public void setSpecies_id(Set<Db_pokemon_species> pokemon_species_id) {
         this.species_id = pokemon_species_id;
     }
 

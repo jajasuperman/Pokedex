@@ -15,6 +15,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import java.util.List;
 
 import com.pokedex.db.*;
+import java.util.Iterator;
 /**
  *
  * @author ADN
@@ -98,8 +99,14 @@ public class HibTest {
 
         //egin nahi duguna
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
-
-        System.out.println("Pokemon species: " + fro.getHabitat_id().getIdentifier() + " !!!!!!!!!!!!!");
+        
+        System.out.print("Pokemon honek (" + fro.getIdentifier() + ") arrautz mota hauek ditu: ");
+        
+        Iterator<Db_egg_groups> ema = fro.getEgg_group_id().iterator();
+        
+        while(ema.hasNext()){
+            System.out.println(ema.next().getIdentifier());
+        }
 
         session.getTransaction().commit();
         
@@ -119,7 +126,7 @@ public class HibTest {
 
 //        froManager.findAll();
 
-        froManager.gg(52);
+        froManager.gg(1);
         
         System.exit(0);
 

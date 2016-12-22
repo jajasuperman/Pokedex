@@ -11,5 +11,9 @@
         <property name="height" type="integer"/>
         <property name="weight" type="integer"/>
         <property name="base_experience" type="integer"/>
+        <set name="izena" table="dittu" cascade="all">
+            <key column="pokemon" />
+            <many-to-many column="izena" class="Db_pokemon"/>
+        </set>
     </class>
 </hibernate-mapping>

@@ -5,6 +5,8 @@
  */
 package com.pokedex.db;
 
+import java.util.Set;
+
 /**
  *
  * @author ADN
@@ -13,13 +15,15 @@ public class Db_erabiltzaile {
     
     private String izena;
     private String pasahitza;
+    private Set<Db_pokemon> pokemon;
 
     public Db_erabiltzaile() {
     }
 
-    public Db_erabiltzaile(String izena, String pasahitza) {
+    public Db_erabiltzaile(String izena, String pasahitza, Set<Db_pokemon> pokemon) {
         this.izena = izena;
         this.pasahitza = pasahitza;
+        this.pokemon = pokemon;
     }
 
     public String getIzena() {
@@ -38,4 +42,12 @@ public class Db_erabiltzaile {
         this.pasahitza = pasahitza;
     }
 
+    public Set<Db_pokemon> getPokemon() {
+        return pokemon;
+    }
+
+    public void setPokemon(Set<Db_pokemon> pokemon) {
+        this.pokemon = pokemon;
+    }
+    
 }
