@@ -17,22 +17,21 @@ import org.hibernate.service.ServiceRegistry;
  *
  * @author Eka
  */
-
 public class Deiak {
 
     private SessionFactory sf = null;
     private Session session;
-    
+
     public int id;
-    
+
     private static Deiak instance = null;
 
     protected Deiak() {
         hasieratu();
     }
-    
+
     public static Deiak getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new Deiak();
         }
         return instance;
@@ -49,7 +48,7 @@ public class Deiak {
         session = sf.openSession();
         session.beginTransaction();
 
-    }   
+    }
 
     public String getPokeIzena(int i) {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
@@ -135,6 +134,55 @@ public class Deiak {
         return eggs;
     }
 
+    public String getPokeEvolution() {
+        Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
+        int aux, ken, max;
+        ken = 2;
+        max = 2;
+        String evo = "";
+        aux = fro.getEvolution_chain_id();
+        //begirada bat eman pls;
+        if (aux == 1) {
+            for (int i = (id); i <= (id + 2); i++) {
+                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+                if (fro.getEvolution_chain_id() == aux) {
+                    evo = evo + " " + fro.getIdentifier() + " ";
+                }
+            }
+        } else if (aux == 2) {
+            for (int i = (id - 1); i <= (id + 2); i++) {
+                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+                if (fro.getEvolution_chain_id() == aux) {
+                    evo = evo + " " + fro.getIdentifier() + " ";
+                }
+            }
+
+        } else if (aux == 720) {
+            for (int i = (id - 2); i <= (id + 1); i++) {
+                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+                if (fro.getEvolution_chain_id() == aux) {
+                    evo = evo + " " + fro.getIdentifier() + " ";
+                }
+            }
+        } else if (aux == 721) {
+            for (int i = (id - 2); i <= (id); i++) {
+                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+                if (fro.getEvolution_chain_id() == aux) {
+                    evo = evo + " " + fro.getIdentifier() + " ";
+                }
+            }
+        } else {
+            for (int i = (id - 2); i <= (id + 2); i++) {
+                fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, i);
+                if (fro.getEvolution_chain_id() == aux) {
+                    evo = evo + " " + fro.getIdentifier() + " ";
+                }
+            }
+        }
+
+        return evo;
+    }
+
     /*
     
     public String getPokeType1(int i) {
@@ -145,9 +193,7 @@ public class Deiak {
 
     }                                               
     
-    public String getPokeEvolution(int i) {
-        
-    }   
+ 
     
     public int getPokeHP(int i) {
 
@@ -182,8 +228,7 @@ public class Deiak {
         Deiak froManager = new Deiak();
 
         System.out.println("Yee");
-        System.out.println(froManager.getPokeBaby(177));
-
+        System.out.println(froManager.getPokeBaby());
         System.exit(0);
 
     }

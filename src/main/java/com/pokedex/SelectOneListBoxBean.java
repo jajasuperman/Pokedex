@@ -19,7 +19,7 @@ public class SelectOneListBoxBean {
 
         pokeList = new ArrayList<>();
 
-        for (int i = 1; i <= 721; i++) {
+        for (int i = 1; i <= 151; i++) {
             String izena = Deiak.getInstance().getPokeIzena(i);
             izena = izena.substring(0, 1).toUpperCase() + izena.substring(1);
             this.pokeList.add(new Pokemon(i, izena));
@@ -111,5 +111,11 @@ public class SelectOneListBoxBean {
     }
     public String getGrowRate() {
         return Deiak.getInstance().getPokeGrowthRate();
+    }
+    
+    //EVOLUTION
+    
+    public String getEvolutions(){
+        return Deiak.getInstance().getPokeEvolution();
     }
 }
