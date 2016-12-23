@@ -2,6 +2,7 @@ package com.pokedex;
 
 import com.pokedex.db.*;
 import java.util.Iterator;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,9 +16,8 @@ public class Deiak {
     private SessionFactory sf = null;
     private Session session;
 
-    
     public int id = 1;
-    
+
     private static Deiak instance = null;
 
     protected Deiak() {
@@ -82,8 +82,8 @@ public class Deiak {
     public String getPokeHabitat() {
         Db_pokemon_species fro = (Db_pokemon_species) session.load(Db_pokemon_species.class, id);
         Db_pokemon_habitats habitat = fro.getHabitat_id();
-        if(habitat == null) {
-            return "-";           
+        if (habitat == null) {
+            return "-";
         }
         return habitat.getIdentifier();
     }
@@ -170,54 +170,47 @@ public class Deiak {
         return evo;
     }
 
-    /*
-    
-    public String getPokeType1(int i) {
-
+    public String getPokeType1() {
+        Db_pokemon_types fro = (Db_pokemon_types) Deiak.getInstance().session.load(Db_pokemon_types.class, new Db_pokemon_types_PK(id, 1));
+        return fro.getType_id().getIdentifier();
     }
 
-    public String getPokeType2(int i) {
+    public int getPokeHP() {
+        Db_pokemon_stats fro = (Db_pokemon_stats) Deiak.getInstance().session.load(Db_pokemon_stats.class, new Db_pokemon_stats_PK(id, 1));
+        return fro.getBase_stat();
+    }
 
-    }                                               
-    
- 
-    
-    public int getPokeHP(int i) {
+    public int getPokeAttack() {
+        Db_pokemon_stats fro = (Db_pokemon_stats) Deiak.getInstance().session.load(Db_pokemon_stats.class, new Db_pokemon_stats_PK(id, 2));
+        return fro.getBase_stat();
+    }
 
+    public int getPokeDefense() {
+        Db_pokemon_stats fro = (Db_pokemon_stats) Deiak.getInstance().session.load(Db_pokemon_stats.class, new Db_pokemon_stats_PK(id, 3));
+        return fro.getBase_stat();
     }
-    
-    public String getPokeAttack(int i) {
-        
-    }
-    
-    public String getPokeDefense(int i) {
-        
-    }
-    
-    public String getPokeSpeed(int i) {
-        
-    }
-    
-    public String getPokeSpAtk(int i) {
-        
-    }
-    
-    public String getPokeSpDef(int i) {
-        
-    }
-    
-    public String getPokeLocations(int i) {
-        
-    }    
 
-     */
+    public int getPokeSpeed() {
+        Db_pokemon_stats fro = (Db_pokemon_stats) Deiak.getInstance().session.load(Db_pokemon_stats.class, new Db_pokemon_stats_PK(id, 4));
+        return fro.getBase_stat();
+    }
+
+    public int getPokeSpAtk() {
+        Db_pokemon_stats fro = (Db_pokemon_stats) Deiak.getInstance().session.load(Db_pokemon_stats.class, new Db_pokemon_stats_PK(id, 5));
+        return fro.getBase_stat();
+    }
+
+    public int getPokeSpDef() {
+        Db_pokemon_stats fro = (Db_pokemon_stats) Deiak.getInstance().session.load(Db_pokemon_stats.class, new Db_pokemon_stats_PK(id, 6));
+        return fro.getBase_stat();
+    }
+    
     public static void main(String[] args) {
 
         Deiak.getInstance();
 
         System.out.println("Yee");
-        Db_pokemon_types fro = (Db_pokemon_types) Deiak.getInstance().session.load(Db_pokemon_types.class, new Db_pokemon_types_PK(2, 1));
-        System.out.println(fro.getType_id().getIdentifier());
+
         System.exit(0);
 
     }

@@ -38,7 +38,6 @@
                         </p:selectOneListbox>
                     </div>
                     <div class="ui-g-12 ui-md-10 ui-g-nopad" id="pokeInfo">
-                        <p:outputLabel value="#{selectOneListBoxBean.pokemon.name}"/>
                         <h:panelGroup id="pokeImage">
                             <h:panelGroup rendered="#{not(empty selectOneListBoxBean.pokemon.name)}">                                
                                 <div style="text-align: center;">
@@ -64,7 +63,6 @@
                                         <ui:include src="info4.xhtml"/>
                                         <ui:include src="evolution.xhtml"/>
                                         <ui:include src="stats.xhtml"/>
-                                        <ui:include src="location.xhtml"/>                                      
                                     </p:tabView>
                                 </div>
 
@@ -72,7 +70,6 @@
                         </h:panelGroup>
                     </div>
                 </div>    
-                <ui:include src="stack.xhtml"/>
                 <h:panelGroup rendered="#{erabiltzailea.getSaioa() ne 'Anonimoa'}">
                     <div style="position: absolute; top: 10%; right: 7.5%;border: 3px solid black; padding: 8px; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">
                         <br />
