@@ -47,7 +47,6 @@ Contributor(s):
         <property name="dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
-        <!-- <mapping resource="Dittu.hbm.xml" /> -->
         <mapping resource="Egg_groups.hbm.xml" />
         <mapping resource="Encounters.hbm.xml" />
         <mapping resource="Erabiltzaile.hbm.xml" />
@@ -57,7 +56,6 @@ Contributor(s):
         <mapping resource="Locations.hbm.xml" />
         <mapping resource="Pokemon.hbm.xml" />
         <mapping resource="Pokemon_colors.hbm.xml" />
-        <!-- <mapping resource="Pokemon_egg_groups.hbm.xml" /> -->
         <mapping resource="Pokemon_habitats.hbm.xml" />
         <mapping resource="Pokemon_shapes.hbm.xml" />
         <mapping resource="Pokemon_species.hbm.xml" />
