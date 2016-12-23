@@ -212,11 +212,12 @@ public class Deiak {
 
      */
     public static void main(String[] args) {
-        Deiak froManager = new Deiak();
+
+        Deiak.getInstance();
 
         System.out.println("Yee");
-
-        System.out.println(froManager.getPokeBaby());
+        Db_pokemon_types fro = (Db_pokemon_types) Deiak.getInstance().session.load(Db_pokemon_types.class, new Db_pokemon_types_PK(2, 1));
+        System.out.println(fro.getType_id().getIdentifier());
         System.exit(0);
 
     }

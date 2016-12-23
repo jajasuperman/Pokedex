@@ -3,10 +3,10 @@
 
 <hibernate-mapping package="com.pokedex.db">
     <class name="Db_pokemon_types" table="pokemon_types">
-        <composite-id>
+        <composite-id class="Db_pokemon_types_PK">
             <key-property name="pokemon_id" type="integer" />
             <key-property name="slot" type="integer" />
         </composite-id>
-        <property name="type_id" type="integer"/>
+        <many-to-one name="type_id" class="Db_types" unique="true" cascade="all" />
     </class>
 </hibernate-mapping>

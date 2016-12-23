@@ -3,7 +3,7 @@
 
 <hibernate-mapping package="com.pokedex.db">
     <class name="Db_pokemon_stats" table="pokemon_stats">
-        <composite-id>
+        <composite-id class="Db_pokemon_stats_PK"> 
             <key-property name="pokemon_id" type="integer" />
             <key-property name="stat_id" type="integer" />
         </composite-id>

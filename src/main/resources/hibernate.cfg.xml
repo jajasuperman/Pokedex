@@ -61,8 +61,8 @@ Contributor(s):
         <mapping resource="Pokemon_habitats.hbm.xml" />
         <mapping resource="Pokemon_shapes.hbm.xml" />
         <mapping resource="Pokemon_species.hbm.xml" />
-        <!-- <mapping resource="Pokemon_stats.hbm.xml" /> -->
-        <!-- <mapping resource="Pokemon_types.hbm.xml" /> -->
+        <mapping resource="Pokemon_stats.hbm.xml" />
+        <mapping resource="Pokemon_types.hbm.xml" />
         <mapping resource="Regions.hbm.xml" />
         <mapping resource="Stats.hbm.xml" />
         <mapping resource="Types.hbm.xml" />

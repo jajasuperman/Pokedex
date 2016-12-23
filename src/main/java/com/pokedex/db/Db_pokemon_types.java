@@ -5,20 +5,30 @@
  */
 package com.pokedex.db;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+
 /**
  *
  * @author ADN
  */
-public class Db_pokemon_types {
+
+@Entity
+@IdClass(Db_pokemon_stats_PK.class)
+public class Db_pokemon_types implements Serializable{
     
+    @Id
     private int pokemon_id;
-    private int type_id;
+    private Db_types type_id;
+    @Id
     private int slot;
 
     public Db_pokemon_types() {
     }
 
-    public Db_pokemon_types(int pokemon_id, int type_id, int slot) {
+    public Db_pokemon_types(int pokemon_id, Db_types type_id, int slot) {
         this.pokemon_id = pokemon_id;
         this.type_id = type_id;
         this.slot = slot;
@@ -32,11 +42,11 @@ public class Db_pokemon_types {
         this.pokemon_id = pokemon_id;
     }
 
-    public int getType_id() {
+    public Db_types getType_id() {
         return type_id;
     }
 
-    public void setType_id(int type_id) {
+    public void setType_id(Db_types type_id) {
         this.type_id = type_id;
     }
 

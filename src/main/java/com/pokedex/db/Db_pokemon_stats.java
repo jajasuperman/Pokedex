@@ -5,14 +5,24 @@
  */
 package com.pokedex.db;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+
 /**
  *
  * @author ADN
  */
-public class Db_pokemon_stats {
+@Entity
+@IdClass(Db_pokemon_stats_PK.class)
+public class Db_pokemon_stats implements Serializable{
         
+    @Id
     private int pokemon_id;
+    @Id
     private int stat_id;
+    
     private int base_stat;
 
     public Db_pokemon_stats() {
